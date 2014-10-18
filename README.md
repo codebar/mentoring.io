@@ -1,3 +1,5 @@
+[ ![Codeship Status for railsrumble/r14-team-256](https://www.codeship.io/projects/cc623f40-2f6e-0131-16cc-02924afac62f/status)](https://www.codeship.io/projects/9483)
+
 ## mentoring
 
 Connecting mentors and students.
