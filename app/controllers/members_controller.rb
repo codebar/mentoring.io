@@ -12,9 +12,10 @@ class MembersController < ApplicationController
 
   # step one initial post
   def create
-    @member = Member.new(params[:member])
+    puts params
+    @member = Member.create(member_params)
     if @member.valid?
-      render :'members/profile_form'
+      redirect_to member_profile_form_path(@member.id)
     else
       render :'members/new'
     end
@@ -23,7 +24,8 @@ class MembersController < ApplicationController
   # may change this........
   # get profile form
   def profile_form
-    @member = Member.find(params[:id])
+    puts params
+    @member = Member.find(params[:member_id])
     render :'members/profile_form'
   end
 
@@ -38,7 +40,7 @@ class MembersController < ApplicationController
     params["mentor"] || false
   end
 
-  def access_params
-
+  def member_params
+    params.require(:member).permit(:email, :username, :full_name, :gender)
   end
 end
