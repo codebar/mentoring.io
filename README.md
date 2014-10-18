@@ -46,6 +46,8 @@ bundle exec rake
 - [bootstrap](http://getbootstrap.com/)
 - [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
 - [simple_form](https://github.com/plataformatec/simple_form)
+- [devise](https://github.com/plataformatec/devise)
+- [omniauth-github](https://github.com/intridea/omniauth-github)
 
 ### Testing
 - [rspec-rails](https://github.com/rspec/rspec-rails)
