@@ -32,7 +32,7 @@ class MembersController < ApplicationController
   def create_profile
     puts params
     @member = Member.find(params[:member_id])
-    @member.update(params[:member])
+    @member.update(member_profile_params)
     if @member.valid?
       @member.save
       if @member.mentor
@@ -53,5 +53,9 @@ class MembersController < ApplicationController
 
   def member_params
     params.require(:member).permit(:email, :username, :full_name, :gender)
+  end
+
+  def member_profile_params
+    params.require(:member).permit(:about, :expertise, :location, :mentor)
   end
 end
