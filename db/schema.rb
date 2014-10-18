@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018091117) do
+ActiveRecord::Schema.define(version: 20141018152551) do
+
+  create_table "member_skills", force: true do |t|
+    t.integer "member_id"
+    t.integer "skill_id"
+    t.integer "level"
+  end
 
   create_table "members", force: true do |t|
     t.string   "full_name"

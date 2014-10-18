@@ -10,6 +10,9 @@ class Member < ActiveRecord::Base
     6 => 'Senior developer'
   }
 
+  # ASSOCIATIONS
+  has_many :member_skills
+  # VALIDATION
   def validate
     validates_presence [:username, :email, :full_name]
   end

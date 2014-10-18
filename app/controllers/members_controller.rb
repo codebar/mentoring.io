@@ -24,14 +24,24 @@ class MembersController < ApplicationController
   # may change this........
   # get profile form
   def profile_form
-    puts params
     @member = Member.find(params[:member_id])
     render :'members/profile_form'
   end
 
   # put profile form
   def create_profile
-
+    puts params
+    @member = Member.find(params[:member_id])
+    @member.set(params[:member])
+    if @member.valid?
+      if @member.mentor
+        redirect_to member_member_skills_path(params[:member_id])
+      else
+        redirect_to member_classified_index_path(params[:member_id])
+      end
+    else
+      render :'member/profile_form'
+    end
   end
 
   private
