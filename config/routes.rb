@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :members, only: [:index, :new, :create] do
+    get :new_mentor
     get :profile_form
     put :create_profile
     resources :member_skills, only: [:create, :new]
