@@ -5,5 +5,4 @@
   %p= 'How would you describe your current level of coding ability?'
   = f.collection_radio_buttons :expertise, Member.expertise_levels, :first, :last
   = f.input :location, placeholder: 'e.g. London'
-  = f.hidden_field :mentor
   = f.submit

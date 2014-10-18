@@ -52,10 +52,10 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:email, :username, :full_name, :gender)
+    params.require(:member).permit(:email, :username, :full_name, :gender, :mentor)
   end
 
   def member_profile_params
-    params.require(:member).permit(:about, :expertise, :location, :mentor)
+    params.require(:member).permit(:about, :expertise, :location)
   end
 end
