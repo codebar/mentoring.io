@@ -1,6 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def github
-    # You need to implement the method below in your model (e.g. app/models/user.rb)
+    
     @member = Member.from_omniauth(request.env["omniauth.auth"])
 
     if @member.persisted?
