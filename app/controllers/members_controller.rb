@@ -36,9 +36,9 @@ class MembersController < ApplicationController
     if @member.valid?
       @member.save
       if @member.mentor
-        redirect_to member_member_skills_path(params[:member_id])
+        redirect_to new_member_member_skill_path(params[:member_id])
       else
-        redirect_to member_classified_index_path(params[:member_id])
+        redirect_to new_member_classified_path(params[:member_id])
       end
     else
       render :'member/profile_form'

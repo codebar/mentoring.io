@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :members, only: [:index, :new, :create] do
     get :profile_form
     put :create_profile
-    resources :member_skills, only: [:create, :index]
-    resources :classified, only: [:create, :index]
+    resources :member_skills, only: [:create, :new]
+    resources :classified, only: [:create, :new]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
