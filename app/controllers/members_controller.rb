@@ -32,8 +32,9 @@ class MembersController < ApplicationController
   def create_profile
     puts params
     @member = Member.find(params[:member_id])
-    @member.set(params[:member])
+    @member.update(params[:member])
     if @member.valid?
+      @member.save
       if @member.mentor
         redirect_to member_member_skills_path(params[:member_id])
       else
