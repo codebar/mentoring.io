@@ -12,7 +12,8 @@
   =fields_for 'member[member_skills][]', MemberSkill.new, index: nil do |ms|
     - Skill.all.each do |s|
       =ms.label s.name
-      =ms.check_box :skill_id, :val => s.id
+      =ms.label s.id
+      //=ms.check_box :skill_id, :val => s.id
+      = ms.check_box :skill_id, {include_hidden: false}, s.id
 
   = f.submit
-
