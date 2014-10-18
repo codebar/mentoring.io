@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     # get :new_mentor
     get :profile_form
     put :create_profile
+    get :new_member_skills
+    put :create_member_skills
     resources :member_skills, only: [:create, :new]
     resources :classified, only: [:create, :new]
   end
