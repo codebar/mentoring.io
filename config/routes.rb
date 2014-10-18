@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :members, only: [:index, :new]
+  resources :members, only: [:index, :new, :create] do
+    get :profile_form
+    put :create_profile
+    resources :member_skills, only: [:create, :index]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
