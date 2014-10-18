@@ -41,6 +41,8 @@ bundle exec rake
 
 ## Third Party Libraries
 - [haml](http://haml.info/)
+- [bootstrap](http://getbootstrap.com/)
+- [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
 
 ### Testing
 - [rspec-rails](https://github.com/rspec/rspec-rails)
