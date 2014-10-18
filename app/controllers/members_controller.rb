@@ -12,7 +12,7 @@ class MembersController < ApplicationController
 
   # step one initial post
   def create
-    puts params
+    puts member_params
     @member = Member.create(member_params)
     if @member.valid?
       redirect_to member_profile_form_path(@member.id)
