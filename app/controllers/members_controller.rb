@@ -46,19 +46,6 @@ class MembersController < ApplicationController
     end
   end
 
-  def new_member_skills
-    @member = Member.find(params[:member_id])
-    # @member_skill = MemberSkill.new
-    render 'members/memberskills_form'
-  end
-
-  def create_member_skills
-    puts "PARAMSSSS #{params}"
-    puts "MEMBA SKILSSSSSS: #{member_skills_params}"
-    @member = Member.find(params[:member_id])
-    @member.member_skills.create(member_skills_params[:member_skills])
-    redirect_to '/'
-  end
 
   private
 
@@ -72,9 +59,5 @@ class MembersController < ApplicationController
 
   def member_profile_params
     params.require(:member).permit(:about, :expertise, :location)
-  end
-
-  def member_skills_params
-    params.require(:member).permit(:member_skills => [:skill_id, :level])
   end
 end
