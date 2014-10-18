@@ -14,7 +14,7 @@ class ClassifiedController < ApplicationController
       # todo redirect somewhere!
       redirect_to '/'
     else
-      render :'members/classified_form'
+      render 'members/classified_form'
     end
   end
 
