@@ -1,0 +1,8 @@
+%h1 Why are you looking for a mentor?
+%p= What do you want to achieve?
+/ = simple_form_for @member do |f|
+  =simple_form_for :classified, :url => member_classified_index_path(@member.id), :method => :post  do |f|
+    = f.input :desciption, placeholder: "I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials" :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'}
+      %p= Are you interested in any specific programming languages? (max 3)
+      = f.collection_radio_buttons :skill_id, Skill.all.map{|s| [s.id, s.name]}, :first, :last
+  = f.submit 

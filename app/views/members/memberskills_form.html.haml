@@ -1,0 +1,7 @@
+%h1 Why are you looking for a mentor?
+%p= What do you want to achieve?
+/ = simple_form_for @member do |f|
+  =simple_form_for @member :url => member_member_skills_path, :method => :post do |f|
+    =f.field_for :member_skills do |m|
+    = m.collection_radio_buttons :skill_id, Skill.all.map{|s| [s.id, s.name]}, :first, :last
+  = f.submit
