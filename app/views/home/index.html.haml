@@ -3,10 +3,8 @@
     .col-md-6.col-md-offset-3
       .text-center
         .lead.tagline
-          Learn to code with the help of a mentor
+          %p Learn to code with the help of a mentor
 
           =link_to "Sign up", new_member_path, class: "btn btn-lg btn-default"
-          %br
-          %br
 
-          or become #{link_to("a mentor", new_member_path(mentor: true))}
+          %p or become #{link_to("a mentor", new_member_path(mentor: true))}
