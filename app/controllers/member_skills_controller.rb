@@ -2,18 +2,17 @@ class MemberSkillsController < ApplicationController
 
   def new
     @member = Member.find(params[:member_id])
-    haml :'members/classified_form'
+    render 'members/memberskills_form'
   end
 
   def create
-    @member = Member.find_(params[:member_id])
-    @member.update!(member_skills_params)
-    # @member.update_attributes(member_skills_params)
+    @member = Member.find(params[:member_id])
+    @member.member_skills.create(member_skills_params[:member_skills])
     if @member.valid?
       # todo redirect somewhere!
-      redirect_to '/'
+      redirect_to root
     else
-      render :'members/classified_form'
+      render :'members/memberskills_form'
     end
   end
 
@@ -21,6 +20,6 @@ class MemberSkillsController < ApplicationController
   private
 
   def member_skills_params
-    params.require(:member_skill).permit(:skill_id, :level)
+    params.require(:member).permit(:member_skills => [:skill_id, :level])
   end
 end

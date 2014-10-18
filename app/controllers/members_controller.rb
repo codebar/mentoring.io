@@ -34,7 +34,8 @@ class MembersController < ApplicationController
     if @member.valid?
       @member.save
       if @member.mentor
-        redirect_to new_member_member_skill_path(params[:member_id])
+        # redirect_to new_member_member_skill_path(params[:member_id])
+        redirect_to member_new_member_skills_path(params[:member_id])
       else
         redirect_to new_member_classified_path(params[:member_id])
       end
@@ -42,6 +43,7 @@ class MembersController < ApplicationController
       render :'member/profile_form'
     end
   end
+
 
   private
 
@@ -54,7 +56,7 @@ class MembersController < ApplicationController
   end
 
   def member_profile_params
-    params.require(:member).permit(:about, :expertise, :location, :mentor)
+    params.require(:member).permit(:about, :expertise, :location)
   end
 
 end
