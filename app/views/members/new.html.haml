@@ -1,0 +1,9 @@
+%h1 Member signup
+
+= simple_form_for @member do |f|
+  = f.input :email
+  = f.input :username
+  = f.input :full_name, placeholder: 'e.g. Jane Doe'
+  = f.input :gender
+  = f.submit
+

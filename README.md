@@ -45,6 +45,7 @@ bundle exec rake
 - [haml](http://haml.info/)
 - [bootstrap](http://getbootstrap.com/)
 - [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+- [simple_form](https://github.com/plataformatec/simple_form)
 
 ### Testing
 - [rspec-rails](https://github.com/rspec/rspec-rails)
