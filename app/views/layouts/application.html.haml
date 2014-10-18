@@ -10,6 +10,9 @@
     = csrf_meta_tags
   %body
     .container
+      =render partial: 'layouts/messages'
+      .text-right
+        =link_to "Sign out", destroy_member_session_path, method: :delete
       %h1 mentoring.io
       = yield
 

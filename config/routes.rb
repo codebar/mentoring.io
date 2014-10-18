@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
 
-  devise_for :members, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :members, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "members/registrations", sessions: 'members/sessions' }
 
   root 'home#index'
 
-  resources :members, only: [:index, :new]
+  resources :members, only: [:index, :new, :create] do
+    # get :new_mentor
+    get :profile_form
+    put :create_profile
+    resources :member_skill, only: [:create, :new]
+    resources :classified, only: [:create, :new]
+  end
 
+  get 'new_mentor', to: 'members#new_mentor'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
