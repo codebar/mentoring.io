@@ -5,5 +5,5 @@
   %p= 'What would you classify yourself as?'
   //= f.input :expertise, :collection => Member.expertise, :as => :radio_buttons
   = f.collection_radio_buttons :expertise, Member.expertise, :first, :last
-  //= f.input :location, placeholder: 'e.g. London'
+  = f.input :location, placeholder: 'e.g. London'
   = f.submit
