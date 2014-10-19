@@ -20,4 +20,5 @@ Rails.application.routes.draw do
     get :preview, as: 'preview'
   end
 
+  resource :verification
 end

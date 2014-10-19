@@ -1,0 +1,15 @@
+.text-center
+  %h1 Verify your account
+
+%br
+.row
+  .col-md-6.col-md-offset-3
+    - if !@verifier.persisted?
+      = simple_form_for @verifier, url: verification_path, method: :post do |f|
+        = f.input :mobile, label: false, placeholder: 'Mobile number'
+
+        = f.submit "Verify", class: 'btn btn-primary'
+    - else @verifier.verified_at.nil?
+      = simple_form_for @verifier, url: verification_path, method: :put do |f|
+        = f.input :authentication_code, label: false, placeholder: 'Enter authentication code'
+        = f.submit "Confirm", class: 'btn btn-primary'
