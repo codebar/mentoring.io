@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   resources :classifieds, only: [:index, :create, :new, :update, :edit] do
     get :preview, as: 'preview'
     post :confirm, as: 'confirm'
+    resources :messages
+  end
+
+  resources :messages, only: [:new, :index, :destroy, :show] do
+    get :reply, as: :reply
+    post :create_message, as: :create_message
   end
 
   resource :verification

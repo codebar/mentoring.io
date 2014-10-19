@@ -1,0 +1,11 @@
+.panel.panel-default
+  .panel-body
+    %strong= message.created_at.to_formatted_s(:long_ordinal)
+    %p.lead
+      = message.text
+    =link_to  message_path(message), class: 'btn btn-primary' do
+      %i.fa.fa-binoculars
+      View
+    =link_to  message_path(message), method: :delete, confirm_message: "Are you sure?", class: 'btn btn-danger' do
+      %i.fa.fa-trash
+      Delete

@@ -1,0 +1,10 @@
+%h1 Message
+%br
+.panel.panel-default
+  .panel-body
+    =render partial: 'classifieds/show', locals: { classified: @classified }
+
+
+= simple_form_for [@classified, @message]  do |f|
+  = f.input :text, required: true, label: false, placeholder: "..."
+  = f.submit 'Send', class: 'btn btn-primary'
