@@ -66,6 +66,7 @@ bundle exec rake
 - [omniauth-github](https://github.com/intridea/omniauth-github)
 - [font-mfizz](https://github.com/mfizz-inc/font-mfizz)
 - [twilio-ruby](https://www.twilio.com)
+- [sass-rails](https://github.com/rails/sass-rails)
 
 ### Testing
 - [rspec-rails](https://github.com/rspec/rspec-rails)

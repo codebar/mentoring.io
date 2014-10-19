@@ -8,13 +8,14 @@
     %p= Member.expertise_levels[@member.expertise]
     %h4 Location:
     %p= @member.location
-    %h4 Interests:
-    = @member.interests.map(&:name).join(', ')
-    %h4 Skills:
-    %ul.skills
-      - @member.skills.each do |skill|
-        %li{:class => "icon-#{skill.name.downcase}", :title => skill.name }
-          = skill.name
-    %br
+    -if @member.mentor
+      %h4 Interests:
+      = @member.interests.map(&:name).join(', ')
+      %h4 Skills:
+      %ul.skills
+        - @member.skills.each do |skill|
+          %li{:class => "icon-#{skill.name.downcase}", :title => skill.name }
+            = skill.name
+      %br
 
     = link_to 'Edit profile', edit_member_profile_path, class: 'btn btn-lg btn-default'
