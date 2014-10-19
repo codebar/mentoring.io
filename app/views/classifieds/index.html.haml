@@ -6,23 +6,36 @@
     .form
 
       = form_tag classifieds_path, :method => 'get' do
-        .field
+        .form-group
           %h4 Location
-          = text_field_tag 'search[location]'
-        .field
-          %h4 Learning style
-          = check_box_tag 'search[remote]'
-          %label Remote?
-          = check_box_tag 'search[face_to_face]'
-          %label Face to Face?
-        .field
-          %h4 Languages
-          - @skills.all.each do |skill|
-            %label
-              = skill.name
-              = check_box_tag 'search[skill_ids][]', skill.id
-        .field{:style => 'float: right'}
-          = submit_tag "Search", :class => 'btn btn-default'
+          = text_field_tag 'search[location]', '', class: 'form-control'
+        .form-group
+          .row
+            .col-md-12
+              %h4 Learning style
+          .row
+            .col-md-2
+              .check-box
+                %label
+                  = check_box_tag 'search[remote]'
+                  Remote?
+            .col-md-2
+              .check-box
+                %label
+                  = check_box_tag 'search[face_to_face]'
+                  Face to Face?
+        .form-group.inline
+          .row
+            .col-md-12
+              %h4 Languages
+            - @skills.all.each do |skill|
+              .col-md-2
+                .check-box
+                  %label
+                    = skill.name
+                    = check_box_tag 'search[skill_ids][]', skill.id
+        .form-group{:style => 'float: right'}
+          = submit_tag "Search", :class => 'btn btn-default btn-lg'
 - @classifieds.each do |classified|
   = render partial: 'classifieds/show', locals: { classified: classified }
 
