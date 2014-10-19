@@ -25,6 +25,10 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :member_interests, :allow_destroy => true
   has_many :added_interests, class_name: :Interest, foreign_key: "added_by"
 
+  #SCOPES
+
+  scope :mentors, -> {where(:mentor => true)}
+
   def self.from_omniauth(auth, mentor=false)
     if member = Member.find_by_email(auth.info.email)
       member.provider = auth.provider
