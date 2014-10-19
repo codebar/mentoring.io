@@ -38,8 +38,13 @@
                     = skill.name
         .form-group{:style => 'float: right'}
           = submit_tag "Search", :class => 'btn btn-default btn-lg'
-
-- @classifieds.each do |classified|
-  .panel.panel-default
-    .panel-body
-      = render partial: 'classifieds/show', locals: { classified: classified }
+- if @classifieds.count > 0
+  - @classifieds.each do |classified|
+    .panel.panel-default
+      .panel-body
+        = render partial: 'classifieds/show', locals: { classified: classified }
+- else
+  %p.blankstate
+    %i.fa.fa-newspaper-o
+      You don't currently have a classified ads to preview!
+    %br
