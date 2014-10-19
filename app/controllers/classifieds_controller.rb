@@ -2,7 +2,7 @@ class ClassifiedsController < ApplicationController
 
   before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm]
   before_filter :set_classified, only: [:edit, :update]
-  
+  before_filter :logged_in?
   def index
     @skills = Skill.all
     if search_params

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+  before_filter :logged_in?
   before_filter :set_current_member
 
   def new

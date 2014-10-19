@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   before_filter :set_member, only: [:index]
+  before_filter :logged_in?
   layout 'application'
   def index
   end

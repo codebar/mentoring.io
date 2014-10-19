@@ -1,5 +1,5 @@
 class SkillsController < ApplicationController
-
+  before_filter :logged_in?
   before_filter :set_member, only: [:new, :create]
 
   def new
