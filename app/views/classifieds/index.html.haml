@@ -1,6 +1,12 @@
-%h1 Classifieds
-%br
-- @classifieds.each do |classified|
-  = render partial: 'classifieds/show', locals: { classified: classified }
+-if @classifieds.count > 0
+  %h1 Classifieds
+  %br
 
-  %hr
+  - @classifieds.each do |classified|
+    = render partial: 'classifieds/show', locals: { classified: classified }
+
+    %hr
+-else
+  %p.blankstate
+    %i.fa.fa-newspaper-o.fa-2x
+    There are currently no classifieds.
