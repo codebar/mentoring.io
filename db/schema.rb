@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019102924) do
+ActiveRecord::Schema.define(version: 20141019112053) do
+
+  create_table "classified_skills", force: true do |t|
+    t.integer  "classified_id"
+    t.integer  "skill_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "classified_skills", ["classified_id"], name: "index_classified_skills_on_classified_id"
+  add_index "classified_skills", ["skill_id"], name: "index_classified_skills_on_skill_id"
 
   create_table "classifieds", force: true do |t|
     t.integer  "member_id"
     t.string   "description"
-    t.integer  "skill_id"
     t.boolean  "face_to_face"
     t.boolean  "remote"
     t.datetime "created_at"
@@ -54,7 +63,6 @@ ActiveRecord::Schema.define(version: 20141019102924) do
     t.boolean  "mentor"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -68,6 +76,7 @@ ActiveRecord::Schema.define(version: 20141019102924) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "location"
     t.string   "provider"
     t.string   "uid"
   end

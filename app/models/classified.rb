@@ -1,5 +1,7 @@
 class Classified < ActiveRecord::Base
-  has_many :skills
-  has_one :member
+  has_many :classified_skills
+  has_many :skills, through: :classified_skills
+
+  belongs_to :member
 
 end

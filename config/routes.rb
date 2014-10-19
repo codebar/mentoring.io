@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :interests, only: [:create, :new]
   end
 
-  resources :classifieds, only: [:create, :new]
+  resources :classifieds, only: [:index, :create, :new]
 end
