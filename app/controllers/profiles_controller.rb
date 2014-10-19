@@ -5,6 +5,13 @@ class ProfilesController < ApplicationController
   def new
   end
 
+  def edit
+  end
+
+  def show
+    @member
+  end
+
   def update
     @member.update(profile_params)
 
@@ -27,6 +34,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:member).permit(:about, :expertise, :location)
+    params.require(:member).permit(:full_name, :about, :expertise, :location)
   end
 end

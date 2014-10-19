@@ -107,11 +107,17 @@ label.checkbox {
   }
 }
 
+.row {
+  margin-top: 10px;
+}
+
 ul.skills {
-  font-size: 2.5em;
+  font-size: 1.6em;
   list-style: none;
+  padding-left: 0;
   li {
-    padding: 2px
+    padding: 2px;
+    display: inline;
   }
 }
 
