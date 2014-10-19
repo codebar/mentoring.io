@@ -3,7 +3,7 @@ class Member < ActiveRecord::Base
   cattr_reader :expertise_levels
   @@expertise_levels = {
     1 => 'No programming knowledge',
-    2 => 'Im familiar with html and css',
+    2 => "I'm familiar with html and css",
     3 => 'I know some basic programming',
     4 => 'Junior developer',
     5 => 'Mid-level developer',
