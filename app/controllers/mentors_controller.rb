@@ -9,7 +9,7 @@ class MentorsController < ApplicationController
   end
 
   def show
-
+    @member = set_current_member
   end
 
   private
