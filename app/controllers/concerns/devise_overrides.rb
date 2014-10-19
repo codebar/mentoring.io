@@ -17,9 +17,17 @@ module Concerns::DeviseOverrides
       end
 
       if resource.mentor
-        new_member_skill_path
+        if resource.profile_complete?
+          dashboard_index_path
+        else
+          new_member_skill_path
+        end
       else
-        new_classified_path
+        if resource.profile_complete?
+          dashboard_index_path
+        else
+          new_classified_path
+        end
       end
     end
   end

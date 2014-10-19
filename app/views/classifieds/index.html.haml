@@ -1,12 +1,33 @@
--if @classifieds.count > 0
-  %h1 Classifieds
-  %br
+/ -if @classifieds.count > 0
+%h1 Classifieds
+%br
+.panel.panel-default
+  .panel-body
+    .form
 
-  - @classifieds.each do |classified|
-    = render partial: 'classifieds/show', locals: { classified: classified }
+      = form_tag classifieds_path, :method => 'get' do
+        .field
+          %h4 Location
+          = text_field_tag 'search[location]'
+        .field
+          %h4 Learning style
+          = check_box_tag 'search[remote]'
+          %label Remote?
+          = check_box_tag 'search[face_to_face]'
+          %label Face to Face?
+        .field
+          %h4 Languages
+          - @skills.all.each do |skill|
+            %label
+              = skill.name
+              = check_box_tag 'search[skill_ids][]', skill.id
+        .field{:style => 'float: right'}
+          = submit_tag "Search", :class => 'btn btn-default'
+- @classifieds.each do |classified|
+  = render partial: 'classifieds/show', locals: { classified: classified }
 
-    %hr
--else
-  %p.blankstate
-    %i.fa.fa-newspaper-o.fa-2x
-    There are currently no classifieds.
+  %hr
+/ -else
+/   %p.blankstate
+/     %i.fa.fa-newspaper-o.fa-2x
+/     There are currently no classifieds.
