@@ -71,13 +71,13 @@ body {
 
   footer {
     color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
   }
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   padding: 20px 0;
 }
 
@@ -95,5 +95,5 @@ label.checkbox {
 
   .form-control {
     height: auto;
-}
+  }
 }

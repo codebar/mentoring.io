@@ -3,7 +3,7 @@ class ClassifiedsController < ApplicationController
   before_filter :set_member, only: [:new, :create]
 
   def index
-    @classifieds = Classifieds.all
+    @classifieds = Classified.all
   end
 
   def new
