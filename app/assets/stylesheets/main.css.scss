@@ -1,68 +1,72 @@
-html {
-  background-image: url('steer-51.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
-}
-
-body {
-  min-height: 100%;
-  background-color: transparent;
-}
-
-.container {
-  width: 100%;
-  padding: 0;
-}
-
-#banner {
-  background: #FF3D2E;
-  opacity: 0.98;
-  padding: 20px 0;
-}
-
-.logo {
-  font-family: 'Lily Script One', cursive;
-  color: #FFFFFF;
-  background-color: #272F32;
-  margin: 0;
-  padding: 20px;
-}
-
-p {
-  color: #FFFFFF;
-  margin-bottom: 20px;
-}
-
-.fa-heart {
-  color: #FF3D2E;
-}
-
-a {
-  color: #272F32;
-  &:hover {
-    color: #9DBDC6;
+  html {
+    background-image: url('background-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
   }
-}
 
-.btn-default {
-  color: #FFFFFF;
-  background-color: #272F32;
-  border: 4px solid #272F32; 
-  margin-bottom: 20px;
-  padding: 10px 40px;
-  &:hover {
-    background-color: #FF3D2E;
+  body {
+    background-color: transparent;
+  }
+.landing {
+  body {
+    min-height: 100%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  #banner {
+    background: #FF3D2E;
+    opacity: 0.96;
+    padding: 20px 0;
+  }
+
+  .logo {
+    font-family: 'Patua One', cursive;
     color: #FFFFFF;
-    border-color: #272F32;
+    background-color: #272F32;
+    margin: 0;
+    padding: 20px;
   }
-}
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: #FFFFFF;
-  padding: 20px 0;
+  p {
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+  .fa-heart {
+    color: #FF3D2E;
+  }
+
+  a {
+    color: #272F32;
+    &:hover {
+      color: #9DBDC6;
+    }
+  }
+
+  .btn-default {
+    color: #FFFFFF;
+    background-color: #272F32;
+    border: 4px solid #272F32; 
+    margin-bottom: 20px;
+    padding: 10px 40px;
+    &:hover {
+      background-color: #FF3D2E;
+      color: #FFFFFF;
+      border-color: #272F32;
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #FFFFFF;
+    padding: 20px 0;
+  }
 }
