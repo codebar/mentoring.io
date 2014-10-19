@@ -1,6 +1,6 @@
 class ClassifiedsController < ApplicationController
 
-  before_filter :set_member, only: [:new, :create, :preview, :edit, :update]
+  before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm]
   before_filter :set_classified, only: [:edit, :update]
 
   def index
@@ -16,6 +16,13 @@ class ClassifiedsController < ApplicationController
     @classified = @member.classifieds.create!(classified_params)
 
     redirect_to classified_preview_path(@classified.id), notice: "Your classified has been created"
+  end
+
+  def confirm
+    @classified = @member.classifieds.find(params[:classified_id])
+    @classified.update_attribute :preview, false
+
+    redirect_to dashboard_index_path, notice: "Your classified has been listed"
   end
 
   def preview

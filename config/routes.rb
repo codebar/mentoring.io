@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :classifieds, only: [:index, :create, :new, :update, :edit] do
     get :preview, as: 'preview'
+    post :confirm, as: 'confirm'
   end
 
   resource :verification
