@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019112053) do
+ActiveRecord::Schema.define(version: 20141019114042) do
 
   create_table "classified_skills", force: true do |t|
     t.integer  "classified_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20141019112053) do
     t.boolean  "remote"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "preview"
   end
 
   create_table "interests", force: true do |t|
@@ -76,9 +77,9 @@ ActiveRecord::Schema.define(version: 20141019112053) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.string   "location"
     t.string   "provider"
     t.string   "uid"
+    t.string   "location"
   end
 
   add_index "members", ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
