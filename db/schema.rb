@@ -80,7 +80,6 @@ ActiveRecord::Schema.define(version: 20141019205937) do
     t.string   "unconfirmed_email"
     t.string   "provider"
     t.string   "uid"
-    t.string   "location"
   end
 
   add_index "members", ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
