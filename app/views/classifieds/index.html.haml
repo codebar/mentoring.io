@@ -32,8 +32,8 @@
               .col-md-2
                 .check-box
                   %label
-                    = skill.name
                     = check_box_tag 'search[skill_ids][]', skill.id
+                    = skill.name
         .form-group{:style => 'float: right'}
           = submit_tag "Search", :class => 'btn btn-default btn-lg'
 - @classifieds.each do |classified|
