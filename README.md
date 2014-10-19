@@ -4,8 +4,6 @@
 
 Connecting mentors and students.
 
-
-
 ## Getting started
 
 Install Ruby 2.1.2
@@ -36,9 +34,9 @@ bundle install --without production
 bundle exec rake db:create
 ```
 
-### Setup the database
+### Enable Github authentication
 
-Create an application at https://github.com/settings/applications/new with http://localhost:3000 as the Homepage URL and http://localhost:3000/members/auth/github/callback as the Authorization callback URL.
+Create an application at `https://github.com/settings/applications/new` with `http://localhost:3000` as the `Homepage URL` and `http://localhost:3000/members/auth/github/callback` as the `Authorization callback URL`.
 
 Once your development application is setup, create a file named .env in the root of the application folder with the GitHub key and secret like so:
 
