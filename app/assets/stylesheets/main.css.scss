@@ -46,15 +46,15 @@ body {
     margin-bottom: 20px;
   }
 
-  .fa-heart {
-    color: #FF3D2E;
-  }
-
   a:not(.btn) {
     color: #272F32;
     &:hover {
       color: #9DBDC6;
     }
+  }
+
+  nav.navbar a {
+    color: #9DBDC6;
   }
 
   #banner .btn-primary {
@@ -70,10 +70,21 @@ body {
   }
 
   footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     color: #FFFFFF;
-    padding: 20px 0;
   }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.fa-heart {
+  color: #FF3D2E;
+}
+
+nav.navbar a {
+  color: #9DBDC6;
 }

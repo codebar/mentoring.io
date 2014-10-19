@@ -10,7 +10,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
+  %body.landing
     %nav.navbar.navbar-default{ role: 'navigation' }
       .container-fluid
         .navbar-header
@@ -22,9 +22,7 @@
               = link_to 'Sign out', destroy_member_session_path, method: :delete
     .container
       =render partial: 'layouts/messages'
-      .row
-        .col-md-12
-          = yield
+      = yield
 
     %footer
       .text-center
