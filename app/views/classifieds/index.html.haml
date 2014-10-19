@@ -1,17 +1,28 @@
+%br
 - @classifieds.each do |classified|
-  %p.lead=classified.description
-  = classified.skills.map(&:name).join(", ")
-  - if classified.remote
-    =link_to "#", title: "Remote", class: 'btn btn-default disabled' do
-      %i.fa.fa-user.fa-3x
-      %i.fa.fa-laptop.fa-2x
-      %i.fa.fa-user.fa-3x
-  - if classified.face_to_face
-    =link_to "#", title: "Face to face", class: 'btn btn-default disabled' do
-      %i.fa.fa-user.fa-3x
-      %i.fa.fa-coffee.fa-2x
-      %i.fa.fa-user.fa-3x
-
+  .row
+    .col-md-12
+      %em #{time_ago_in_words(classified.created_at.to_time)} ago
+      %p= classified.description
+      - classified.skills.each do |skill|
+        %i{ class: skill.icon }
+        = skill.name
+      .text-right
+        - if classified.remote
+          %span.label.label-info
+            %i.fa.fa-laptop
+              Remote
+        - if classified.face_to_face
+          %span.label.label-info
+            %i.fa.fa-coffee
+              =classified.member.location
+    .col-md-12
+      .btn-group.btn-group-sm
+        =link_to "#", title: 'Add to favorites', class: 'btn btn-default' do
+          %i.fa.fa-star
+          Favorite
+        =link_to "#", title: 'Send message', class: 'btn btn-default' do
+          %i.fa.fa-envelope
+          Message
 
   %hr
-
