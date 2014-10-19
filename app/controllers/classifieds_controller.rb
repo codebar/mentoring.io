@@ -30,8 +30,12 @@ class ClassifiedsController < ApplicationController
     redirect_to dashboard_index_path, notice: "Your classified has been listed"
   end
 
-  def preview
+  def personal
     @classifieds = @member.classifieds.where(preview: true)
+  end
+
+  def preview
+    @classified = @member.classifieds.find(params[:classified_id])
   end
 
   def edit
