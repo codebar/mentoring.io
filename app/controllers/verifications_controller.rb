@@ -17,8 +17,6 @@ class VerificationsController < ApplicationController
 
   def update
     @verifier = current_member.verifier
-    puts verifier_params[:authentication_code]
-    puts @verifier.code
 
     if  @verifier.code.eql?(verifier_params[:authentication_code])
       @verifier.confirm!
