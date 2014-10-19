@@ -60,6 +60,7 @@ bundle exec rake
 - [haml](http://haml.info/)
 - [bootstrap](http://getbootstrap.com/)
 - [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+- [font-awesome](http://fortawesome.github.io/Font-Awesome/)
 - [simple_form](https://github.com/plataformatec/simple_form)
 - [devise](https://github.com/plataformatec/devise)
 - [omniauth-github](https://github.com/intridea/omniauth-github)
