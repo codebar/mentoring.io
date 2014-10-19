@@ -20,8 +20,9 @@ class Member < ActiveRecord::Base
   has_many :skills, through: :member_skills
   accepts_nested_attributes_for :member_skills, :allow_destroy => true
   has_many :classifieds
-  accepts_nested_attributes_for :classifieds, :allow_destroy => true
-  # has_many :skills, :through => :member_skills
+  has_many :member_interests
+  has_many :interests, through: :member_interests
+  accepts_nested_attributes_for :member_interests, :allow_destroy => true
 
   def self.from_omniauth(auth, mentor=false)
     if member = Member.find_by_email(auth.info.email)

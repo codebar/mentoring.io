@@ -1,12 +1,18 @@
-%h2 Log in
+.row
+  %h1 Sign in
+  .col-md-6
+    - resource_class.omniauth_providers.each do |provider| 
+      = link_to  omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary btn-lg' do
+        %i.fa.fa-github.fa-5x
+        %br
+        #{provider.to_s.titleize}
+  .col-md-6
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-inputs
+        = f.input :email, autofocus: true, required: true
+        = f.input :password, required: true
+        = f.input :remember_me, as: :boolean, wrapper: :inline_checkbox if devise_mapping.rememberable?
 
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+      .form-actions
+        = f.button :submit, "Log in", class: "btn btn-default"
 
-  .form-actions
-    = f.button :submit, "Log in", class: "btn btn-default"
-
-= render "devise/shared/links"

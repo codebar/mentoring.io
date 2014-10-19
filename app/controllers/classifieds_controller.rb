@@ -3,7 +3,7 @@ class ClassifiedsController < ApplicationController
   before_filter :set_member, only: [:new, :create]
 
   def index
-    @classifieds = Classifieds.all
+    @classifieds = Classified.all
   end
 
   def new
@@ -12,14 +12,9 @@ class ClassifiedsController < ApplicationController
   end
 
   def create
-    @classified = @member.classifieds.create(classified_params)
+    @classified = @member.classifieds.create!(classified_params)
 
-    if @member.valid?
-      # todo redirect somewhere!
-      redirect_to '/'
-    else
-      render 'members/classified_form'
-    end
+    redirect_to '/', notice: "Your classified has been posted"
   end
 
   private
@@ -29,6 +24,6 @@ class ClassifiedsController < ApplicationController
   end
 
   def classified_params
-    params.require(:classified).permit(:skill_id, :description, :remote, :face_to_face)
+    params.require(:classified).permit(:description, :remote, :face_to_face, skill_ids: [])
   end
 end

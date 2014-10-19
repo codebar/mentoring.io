@@ -71,13 +71,13 @@ body {
 
   footer {
     color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
   }
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   padding: 20px 0;
 }
 
@@ -87,4 +87,13 @@ footer {
 
 nav.navbar a {
   color: #9DBDC6;
+}
+
+label.checkbox {
+  display: inline-block;
+  padding: 0px 20px;
+
+  .form-control {
+    height: auto;
+  }
 }

@@ -1,17 +1,32 @@
-%h2 Create an account
+%br
+.row
+  .col-md-8.col-md-offset-2
+    .row
+      .col-md-12
+        %h3 Sign up with...
+        %br
+        - resource_class.omniauth_providers.each do |provider|
+          = link_to omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary btn-lg' do
+            %i.fa.fa-github.fa-5x
+            %br
+            #{provider.to_s.titleize}
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.error_notification
+          %br
+          %br
+          %h3 or with your email address
+          %br
 
-  .form-inputs
-    = f.input :email, required: true, autofocus: true, class: "form-control"
-    = f.input :username
-    = f.input :full_name, placeholder: 'e.g. Jane Doe'
-    = f.input :gender
-    = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
-    = f.input :password_confirmation, required: true
+        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f|
+          = f.error_notification
 
-  .form-actions
-    = f.button :submit, "Sign up", class: "btn btn-default"
+          = f.input :email, required: true, autofocus: true
+          = f.input :username
+          = f.input :full_name, placeholder: 'e.g. Jane Doe'
+          = f.input :gender
+          = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
+          = f.input :password_confirmation, required: true
 
-= render "devise/shared/links"
+          = f.button :submit, "Sign up", class: "btn-default"
+
+
+    = render "devise/shared/links"
