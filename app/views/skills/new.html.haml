@@ -1,15 +1,16 @@
-%h1 Your skills
+%h1 Your Skills and Interests
 %p What do you feel comfortable mentoring?
 
 .form
   = simple_form_for @member, :url => member_skills_path,  :method => :post do |f|
-    = f.association :skills, as: :check_boxes
-    = f.association :interests, as: :check_boxes
+    = f.association :skills, as: :check_boxes, :label_html => {:style => "font-size: 1.5em; display: block;"}
+    = f.association :interests, as: :check_boxes, :label_html => {:style => "font-size: 1.5em; display: block;"}
 
 
     / = simple_form_for @interests, :url => member_interests_path, :method => :post do |m|
-    = text_field_tag 'interest[name]'
-    = button_tag 'Add new interest', class: 'btn btn-sm btn-default navbar-btn', id: 'add_interest'
+    .form-field
+      = text_field_tag 'interest[name]'
+      = button_tag 'Add new interest', class: 'btn btn-sm btn-default navbar-btn', id: 'add_interest'
 
 
     =f.submit 'Save', class: 'btn btn-sm btn-default navbar-btn'
