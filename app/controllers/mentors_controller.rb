@@ -8,6 +8,10 @@ class MentorsController < ApplicationController
     render :'mentors/index'
   end
 
+  def show
+
+  end
+
   private
 
   def set_current_member
