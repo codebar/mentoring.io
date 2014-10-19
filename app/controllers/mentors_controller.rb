@@ -4,7 +4,7 @@ class MentorsController < ApplicationController
 
 
   def index
-    @mentors = Member.mentors.all
+    @mentors = Member.mentors.where.not(:id => @member.id).all
     render :'mentors/index'
   end
 
