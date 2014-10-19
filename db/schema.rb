@@ -52,9 +52,9 @@ ActiveRecord::Schema.define(version: 20141018182003) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.string   "location"
     t.string   "provider"
     t.string   "uid"
+    t.string   "location"
   end
 
   add_index "members", ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
