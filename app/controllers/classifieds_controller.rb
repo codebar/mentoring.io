@@ -1,16 +1,19 @@
-class ClassifiedController < ApplicationController
+class ClassifiedsController < ApplicationController
+
+  before_filter :set_member, only: [:new, :create]
+
+  def index
+    @classifieds = Classifieds.all
+  end
 
   def new
-    @member = Member.find(params[:member_id])
     @skills = Skill.all
     @classified = @member.classifieds.build
-    render :'members/classified_form'
   end
 
   def create
-    puts params
-    @member = Member.find(params[:member_id])
     @classified = @member.classifieds.create(classified_params)
+
     if @member.valid?
       # todo redirect somewhere!
       redirect_to '/'
@@ -19,8 +22,11 @@ class ClassifiedController < ApplicationController
     end
   end
 
-
   private
+
+  def set_member
+    @member = current_member
+  end
 
   def classified_params
     params.require(:classified).permit(:skill_id, :description, :remote, :face_to_face)

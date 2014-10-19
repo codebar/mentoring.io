@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
       if @member.mentor
         redirect_to new_member_skill_path
       else
-        redirect_to new_member_classified_path(@member)
+        redirect_to new_classified_path
       end
     else
       render 'profiles/new'

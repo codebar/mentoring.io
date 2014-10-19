@@ -2,7 +2,7 @@
 %p What do you want to achieve?
 
 .form
-  =simple_form_for :classified, :url => member_classified_index_path(@member.id), :method => :post  do |f|
+  =simple_form_for @classified, :method => :post  do |f|
     .form-group
       = f.input :description, placeholder: "I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials", :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'}
     .form-group
