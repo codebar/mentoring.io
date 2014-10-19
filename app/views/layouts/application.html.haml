@@ -11,15 +11,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %nav.navbar.navbar-default{ role: 'navigation' }
-      .container-fluid
-        .navbar-header
-          =link_to root_path, class: 'navbar-brand' do
-            .logo mentoring.io
-        - if member_signed_in?
-          .collapse.navbar-collapse
-            .navbar-text.navbar-right
-              = link_to 'Sign out', destroy_member_session_path, method: :delete
+    = render partial: 'layouts/navigation'
     .container
       =render partial: 'layouts/messages'
       .row
@@ -28,5 +20,5 @@
 
     %footer
       .text-center
-        ="made with "
+        made with 
         %i.fa.fa-heart
