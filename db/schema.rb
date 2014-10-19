@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20141019114042) do
     t.boolean  "mentor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

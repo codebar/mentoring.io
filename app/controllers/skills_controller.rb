@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
 
   def new
     @skills = Skill.all
-
+    @interests = Interest.new
   end
 
   def create
