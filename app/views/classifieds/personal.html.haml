@@ -1,9 +1,15 @@
 %h1 Preview classified
 .panel.panel-default
   .panel-body
-    - @classifieds.each do |classified|
-      = render partial: 'classifieds/show', locals: { classified: classified }
+    - if @classifieds.count > 0
 
-      %br
+      - @classifieds.each do |classified|
+        = render partial: 'classifieds/show', locals: { classified: classified }
 
-      = link_to 'Post classified', classified_confirm_path(classified), method: :post, class: 'btn btn-primary'
+        %br
+
+        = link_to 'Post classified', classified_confirm_path(classified), method: :post, class: 'btn btn-primary'
+    - else
+      %p.blankstate
+        %i.fa.fa-newspaper-o
+        You don't currently have a classified ads to preview!
