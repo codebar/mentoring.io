@@ -35,7 +35,7 @@ class MembersController < ApplicationController
       @member.save
       if @member.mentor
         # redirect_to new_member_member_skill_path(params[:member_id])
-        redirect_to member_new_member_skills_path(params[:member_id])
+        redirect_to new_member_member_skill_path(params[:member_id])
       else
         redirect_to new_member_classified_path(params[:member_id])
       end

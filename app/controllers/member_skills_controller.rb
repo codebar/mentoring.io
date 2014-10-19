@@ -2,6 +2,7 @@ class MemberSkillsController < ApplicationController
 
   def new
     @member = Member.find(params[:member_id])
+    @skills = Skill.all
     render 'members/memberskills_form'
   end
 
@@ -10,7 +11,7 @@ class MemberSkillsController < ApplicationController
     @member.member_skills.create(member_skills_params[:member_skills])
     if @member.valid?
       # todo redirect somewhere!
-      redirect_to root
+      redirect_to root_path
     else
       render :'members/memberskills_form'
     end
