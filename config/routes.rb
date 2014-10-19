@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :members, only: [:index, :new, :create]
   resources :dashboard, only: [:index]
-  resources :mentors, only: [:index]
+  resources :mentors, only: [:index, :show]
 
   resource :member, only: [] do
     resource :profile, only: [:new, :update]
@@ -16,5 +16,8 @@ Rails.application.routes.draw do
     resources :interests, only: [:create, :new]
   end
 
-  resources :classifieds, only: [:index, :create, :new]
+  resources :classifieds, only: [:index, :create, :new, :update, :edit] do
+    get :preview, as: 'preview'
+  end
+
 end

@@ -3,7 +3,9 @@
     .navbar-header
       =link_to dashboard_index_path, class: 'navbar-brand' do
         .logo mentoring.io
-    - if member_signed_in?
-      .collapse.navbar-collapse
-        .navbar-text.navbar-right
+    .collapse.navbar-collapse
+      .navbar-text.navbar-right
+        - if member_signed_in?
           = link_to 'Sign out', destroy_member_session_path, method: :delete
+        - else
+          = link_to 'Sign in', member_session_path

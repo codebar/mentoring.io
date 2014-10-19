@@ -16,6 +16,10 @@
           %span.label.label-info
             %i.fa.fa-coffee
               =classified.member.location
+        - if classified.preview
+          %p=link_to 'Edit classified', edit_classified_path(classified), class: 'btn btn-default'
+        -else
+          = 'Posted'
     .col-md-12
       .btn-group.btn-group-sm
         =link_to "#", title: 'Add to favorites', class: 'btn btn-default' do

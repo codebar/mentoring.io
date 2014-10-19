@@ -25,7 +25,7 @@ body {
 #banner {
   position: absolute;
   width: 100%;
-  top: 79px;
+  top: 0;
   background: #FF3D2E;
   opacity: 0.96;
   padding: 20px 0;
@@ -39,6 +39,7 @@ body {
   .container {
     width: 100%;
     padding: 0;
+    position: relative;
   }
 
   p {
@@ -68,16 +69,15 @@ body {
       border-color: #272F32;
     }
   }
-
   footer {
     color: #FFFFFF;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
   }
 }
 
 footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
   padding: 20px 0;
 }
 
@@ -101,5 +101,13 @@ label.checkbox {
 ul.skills {
   font-size: 2.5em;
   list-style: none;
+  li {
+    padding: 2px
+  }
+}
+
+
+.smaller {
+  font-size: 0.8em;
 }
 
