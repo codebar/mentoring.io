@@ -63,6 +63,7 @@ bundle exec rake
 - [simple_form](https://github.com/plataformatec/simple_form)
 - [devise](https://github.com/plataformatec/devise)
 - [omniauth-github](https://github.com/intridea/omniauth-github)
+- [font-mfizz](https://github.com/mfizz-inc/font-mfizz)
 
 ### Testing
 - [rspec-rails](https://github.com/rspec/rspec-rails)

@@ -2,7 +2,21 @@
 
 
 -@mentors.each do |mentor|
-  .panel
-    %h3= mentor.username
-    .details
-      / %i.fa.fa-
+  .panel.panel-default
+    .panel-heading
+      %h3= mentor.username
+    .panel-body
+      %p
+        / %i.fa.fa-tachometer
+        = Member.expertise_levels[mentor.expertise]
+      %p= mentor.about
+      .row
+        .col-md-12
+          %h4 Skills
+          %ul.skills
+            - mentor.skills.each do |skill|
+              %li{:class => "icon-#{skill.name}", :title => skill.name}
+
+          %h4 Interests
+          -mentor.interests.each do |interest|
+            %span.label.label-default= interest.name
