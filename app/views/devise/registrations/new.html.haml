@@ -20,13 +20,10 @@
           = f.error_notification
 
           = f.input :email, required: true, autofocus: true
-          = f.input :username
-          = f.input :full_name, placeholder: 'e.g. Jane Doe'
-          = f.input :gender
           = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
           = f.input :password_confirmation, required: true
 
-          = f.button :submit, "Sign up", class: "btn-default"
+          = f.button :submit, "Sign up", class: "btn-primary"
 
 
     = render "devise/shared/links"
