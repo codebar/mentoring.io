@@ -1,22 +1,22 @@
-%h1 Why are you looking for a mentor?
-%p What do you want to achieve?
+%h1 New classified
 
 .form
   = simple_form_for @classified, :method => :post, role: 'form'  do |f|
     .form-group
-      = f.input :description, :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'} , placeholder: "e.g. I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials", required: true
+      = f.input :description, :as => :text, :input_html => { :rows => 4 , :style => 'width: 100%'} , placeholder: "e.g. I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials", required: true, label: 'What do you want to achieve?'
     .form-group
-      %p Check any skills that you are comfortable with
+      %b Skills that you are looking to improve
+      %em.hint (we recommend you don't pick more than 3)
 
       = f.association :skills, as: :check_boxes, wrapper: :inline_checkbox, label: false
 
     .form-group
-      %p How would you like to work?
-      .hint Please select at least one.
+      %b Meeting preferences*
+      %em.hint (select at least one)
 
       = f.input :remote, as: :boolean, wrapper: :inline_checkbox
       = f.input :face_to_face, as: :boolean, wrapper: :inline_checkbox
 
       = f.input :preview, as: :hidden, :input_html => { :value => true }
 
-    = f.submit 'Preview classified', class: 'btn btn-default'
+    = f.submit 'Preview classified', class: 'btn btn-primary'
