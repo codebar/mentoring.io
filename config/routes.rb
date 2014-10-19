@@ -16,5 +16,8 @@ Rails.application.routes.draw do
     resources :interests, only: [:create, :new]
   end
 
-  resources :classifieds, only: [:index, :create, :new]
+  resources :classifieds, only: [:index, :create, :new, :update, :edit] do
+    get :preview, as: 'preview'
+  end
+
 end

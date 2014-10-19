@@ -1,6 +1,6 @@
 class ClassifiedsController < ApplicationController
 
-  before_filter :set_member, only: [:new, :create]
+  before_filter :set_member, only: [:new, :create, :preview, :edit, :update]
 
   def index
     @classifieds = Classified.all
@@ -14,7 +14,22 @@ class ClassifiedsController < ApplicationController
   def create
     @classified = @member.classifieds.create!(classified_params)
 
-    redirect_to '/', notice: "Your classified has been posted"
+    redirect_to classified_preview_path(@classified.id), notice: "Your classified has been created"
+  end
+
+  def preview
+    @classified = @member.classifieds.find(params[:classified_id])
+  end
+
+  def edit
+    @classified = @member.classifieds.find(params[:id])
+  end
+
+  def update
+    @classified = @member.classifieds.find(params[:id])
+    @classified.update(classified_params)
+
+    redirect_to classified_preview_path(@classified.id), notice: "Your classified has been updated"
   end
 
   private
@@ -24,6 +39,6 @@ class ClassifiedsController < ApplicationController
   end
 
   def classified_params
-    params.require(:classified).permit(:description, :remote, :face_to_face, skill_ids: [])
+    params.require(:classified).permit(:description, :remote, :face_to_face, :preview, skill_ids: [])
   end
 end
