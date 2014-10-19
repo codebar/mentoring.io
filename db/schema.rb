@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019160312) do
+ActiveRecord::Schema.define(version: 20141019205937) do
 
   create_table "classified_skills", force: true do |t|
     t.integer  "classified_id"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20141019160312) do
     t.boolean  "mentor"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -78,6 +77,7 @@ ActiveRecord::Schema.define(version: 20141019160312) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "location"
     t.string   "provider"
     t.string   "uid"
   end
@@ -85,6 +85,20 @@ ActiveRecord::Schema.define(version: 20141019160312) do
   add_index "members", ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
   add_index "members", ["email"], name: "index_members_on_email", unique: true
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+
+  create_table "messages", force: true do |t|
+    t.integer  "member_id"
+    t.integer  "classified_id"
+    t.text     "text"
+    t.integer  "message_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "read",          default: false
+  end
+
+  add_index "messages", ["classified_id"], name: "index_messages_on_classified_id"
+  add_index "messages", ["member_id"], name: "index_messages_on_member_id"
+  add_index "messages", ["message_id"], name: "index_messages_on_message_id"
 
   create_table "skills", force: true do |t|
     t.string "name"
