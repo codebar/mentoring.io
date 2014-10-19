@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018182003) do
+ActiveRecord::Schema.define(version: 20141019102924) do
 
   create_table "classifieds", force: true do |t|
     t.integer  "member_id"
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 20141018182003) do
     t.integer  "skill_id"
     t.boolean  "face_to_face"
     t.boolean  "remote"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interests", force: true do |t|
+    t.string   "name"
+    t.boolean  "verified"
+    t.integer  "added_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "member_interests", force: true do |t|
+    t.integer  "member_id"
+    t.integer  "interest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141018182003) do
     t.boolean  "mentor"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -54,7 +70,6 @@ ActiveRecord::Schema.define(version: 20141018182003) do
     t.string   "unconfirmed_email"
     t.string   "provider"
     t.string   "uid"
-    t.string   "location"
   end
 
   add_index "members", ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
