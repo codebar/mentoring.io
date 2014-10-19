@@ -36,6 +36,23 @@ bundle install --without production
 bundle exec rake db:create
 ```
 
+### Setup the database
+
+Create an application at https://github.com/settings/applications/new with http://localhost:3000 as the Homepage URL and http://localhost:3000/members/auth/github/callback as the Authorization callback URL.
+
+Once your development application is setup, create a file named .env in the root of the application folder with the GitHub key and secret like so:
+
+```bash
+GITHUB_KEY=YOUR_KEY
+GITHUB_SECRET=YOUR_SECRET
+```
+Note: Windows doesn't like creating a file named .env so do the following from a cmd prompt in your application folder:
+
+```bash
+echo GITHUB_KEY=YOUR_KEY >> .env
+echo GITHUB_SECRET=YOUR_SECRET >> .env
+```
+
 ### Run the tests
 ```bash
 bundle exec rake
@@ -46,6 +63,8 @@ bundle exec rake
 - [bootstrap](http://getbootstrap.com/)
 - [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
 - [simple_form](https://github.com/plataformatec/simple_form)
+- [devise](https://github.com/plataformatec/devise)
+- [omniauth-github](https://github.com/intridea/omniauth-github)
 
 ### Testing
 - [rspec-rails](https://github.com/rspec/rspec-rails)

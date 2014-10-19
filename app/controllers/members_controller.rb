@@ -1,18 +1,17 @@
 class MembersController < ApplicationController
 
   def new
-    @member = Member.new(mentor: false)
-    render :'members/new'
+    cookies[:mentor] = false
+    redirect_to new_member_registration_path
   end
 
   def new_mentor
-    @member = Member.new(mentor: true)
-    render :'members/new'
+    cookies[:mentor] = true
+    redirect_to new_member_registration_path
   end
 
   # step one initial post
   def create
-    puts member_params
     @member = Member.create(member_params)
     if @member.valid?
       redirect_to member_profile_form_path(@member.id)
@@ -30,7 +29,6 @@ class MembersController < ApplicationController
 
   # put profile form
   def create_profile
-    puts params
     @member = Member.find(params[:member_id])
     @member.update(member_profile_params)
     if @member.valid?
@@ -54,10 +52,11 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:email, :username, :full_name, :gender, :mentor)
+    params.require(:member).permit(:email, :username, :full_name, :gender, :provider, :uid)
   end
 
   def member_profile_params
     params.require(:member).permit(:about, :expertise, :location)
   end
+
 end
