@@ -8,6 +8,5 @@
 %p= @member.location
 %h4 Skills:
 %ul.skills
-  = @member.skills.each do |skill|
-    =skill.name
+  - @member.skills.each do |skill|
     %li{:class => "icon-#{skill.name.downcase}", :title => skill.name, :style => 'float: left'}
