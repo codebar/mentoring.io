@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'new_mentor', to: 'members#new_mentor'
 
   resources :members, only: [:index, :new, :create]
+  resources :dashboard, only: [:index]
+  resources :mentors, only: [:index]
 
   resource :member, only: [] do
     resource :profile, only: [:new, :update]

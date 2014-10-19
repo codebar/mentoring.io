@@ -1,4 +1,5 @@
 class Member < ActiveRecord::Base
+  require 'digest/md5'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -23,6 +24,11 @@ class Member < ActiveRecord::Base
   has_many :member_interests
   has_many :interests, through: :member_interests
   accepts_nested_attributes_for :member_interests, :allow_destroy => true
+  has_many :added_interests, class_name: :Interest, foreign_key: "added_by"
+
+  #SCOPES
+
+  scope :mentors, -> {where(:mentor => true)}
 
   def self.from_omniauth(auth, mentor=false)
     if member = Member.find_by_email(auth.info.email)
@@ -50,4 +56,8 @@ class Member < ActiveRecord::Base
     !self.about.blank? and !self.location.blank?
   end
 
+  def gravatar_image(size = 100)
+    hash = Digest::MD5.hexdigest(email)
+    "http://www.gravatar.com/avatar/#{hash}?s=#{size}"
+  end
 end
