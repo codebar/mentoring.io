@@ -4,7 +4,8 @@
 -@mentors.each do |mentor|
   .panel.panel-default
     .panel-heading
-      %h3= mentor.username
+      %img{:src => mentor.gravatar_image(50)}
+      %h3{:style => 'display:inline; padding-left: 15px'}= mentor.username
     .panel-body
       %p
         / %i.fa.fa-tachometer
@@ -15,7 +16,7 @@
           %h4 Skills
           %ul.skills
             - mentor.skills.each do |skill|
-              %li{:class => "icon-#{skill.name}", :title => skill.name}
+              %li{:class => "icon-#{skill.name.downcase}", :title => skill.name}
 
           %h4 Interests
           -mentor.interests.each do |interest|
