@@ -38,11 +38,8 @@
                     = skill.name
         .form-group{:style => 'float: right'}
           = submit_tag "Search", :class => 'btn btn-default btn-lg'
-- @classifieds.each do |classified|
-  = render partial: 'classifieds/show', locals: { classified: classified }
 
-  %hr
-/ -else
-/   %p.blankstate
-/     %i.fa.fa-newspaper-o.fa-2x
-/     There are currently no classifieds.
+- @classifieds.each do |classified|
+  .panel.panel-default
+    .panel-body
+      = render partial: 'classifieds/show', locals: { classified: classified }
