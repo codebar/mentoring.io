@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20141019205937) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.string   "location"
     t.string   "provider"
     t.string   "uid"
     t.string   "location"
