@@ -1,13 +1,15 @@
 class MessagesController < ApplicationController
   before_filter :set_classified, only: [:new, :create]
+  before_filter :setup_message, only: [:create, :create_message ]
+  before_filter :set_message, only: [:destroy, :show]
 
   def new
     @message = @classified.messages.build
   end
 
   def create
-    @message = Message.new(message_params)
     @message.classified_id = params[:classified_id]
+
     if @message.save
       redirect_to classified_messages_path(@classified) and return
     else
@@ -17,7 +19,6 @@ class MessagesController < ApplicationController
   end
 
   def create_message
-    @message = Message.new(message_params)
     @message.message_id = params[:message_id]
 
     if @message.save
@@ -34,7 +35,6 @@ class MessagesController < ApplicationController
   end
 
   def show
-    set_message
   end
 
   def reply
@@ -43,7 +43,6 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    set_message
     @message.destroy
 
     redirect_to messages_path, notice: "The message has been deleted!"
@@ -61,5 +60,9 @@ class MessagesController < ApplicationController
 
   def set_message
     @message = Message.find(params[:id])
+  end
+
+  def setup_message
+    @message = Message.new(message_params)
   end
 end
