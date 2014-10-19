@@ -35,10 +35,11 @@ class MessagesController < ApplicationController
 
   def index
     @messages = current_member.classified_messages
-    @outgoing = current_member.messages
+    @outgoing = current_member.messages.order('read, created_at')
   end
 
   def show
+    @message.update_attribute :read, true
   end
 
   def reply
