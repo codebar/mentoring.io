@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resource :member, only: [] do
     resource :profile, only: [:new, :update]
     resources :skills, only: [:create, :new]
+    resources :interests, only: [:create, :new]
   end
 
   resources :classifieds, only: [:index, :create, :new]

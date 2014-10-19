@@ -32,6 +32,21 @@ ActiveRecord::Schema.define(version: 20141019112053) do
     t.datetime "updated_at"
   end
 
+  create_table "interests", force: true do |t|
+    t.string   "name"
+    t.boolean  "verified"
+    t.integer  "added_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "member_interests", force: true do |t|
+    t.integer  "member_id"
+    t.integer  "interest_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "member_skills", force: true do |t|
     t.integer "member_id"
     t.integer "skill_id"
