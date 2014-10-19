@@ -17,6 +17,7 @@ class Member < ActiveRecord::Base
 
   # ASSOCIATIONS
   has_many :member_skills
+  has_many :skills, through: :member_skills
   accepts_nested_attributes_for :member_skills, :allow_destroy => true
   has_many :classifieds
   accepts_nested_attributes_for :classifieds, :allow_destroy => true
