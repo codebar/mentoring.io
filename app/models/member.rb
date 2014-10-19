@@ -60,5 +60,4 @@ class Member < ActiveRecord::Base
     hash = Digest::MD5.hexdigest(email)
     "http://www.gravatar.com/avatar/#{hash}?s=#{size}"
   end
-
 end
