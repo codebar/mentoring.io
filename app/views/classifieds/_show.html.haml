@@ -22,6 +22,7 @@
         %i.fa.fa-star
         Favorite
       =link_to "#", title: 'Send message', class: 'btn btn-info' do
+      =link_to new_classified_message_path(classified), title: 'Send message', class: 'btn btn-default' do
         %i.fa.fa-envelope
         Message
     .text-right

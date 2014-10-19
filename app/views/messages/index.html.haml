@@ -1,0 +1,11 @@
+%h1 My Messages
+
+%h3 Incoming
+%hr
+- @messages.each do |message|
+  =render partial: 'messages/show', locals: { message: message }
+
+%h3 Outgoing
+%hr
+- @outgoing.each do |message|
+  =render partial: 'messages/show', locals: { message: message }
