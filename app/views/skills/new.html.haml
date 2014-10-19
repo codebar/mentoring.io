@@ -6,9 +6,9 @@
     = f.association :skills, as: :check_boxes
 
     %p Interests
-    = f.assocation :interests, as: :check_boxes
+    = f.association :interests, as: :check_boxes
     
-    = simple_form_for @interests, :url => member_interests, :method => :post do |m|
-      = m.input :name, 
+    = simple_form_for @interests, :url => member_interests_path, :method => :post do |m|
+      = m.input :name
       = m.submit 'Add new interest', class: 'btn btn-sm btn-default navbar-btn'
     =f.submit 'Save', class: 'btn btn-sm btn-default navbar-btn'
