@@ -20,12 +20,7 @@ class MembersController < ApplicationController
     end
   end
 
-
   private
-
-  def mentor
-    params["mentor"] || false
-  end
 
   def member_params
     params.require(:member).permit(:email, :username, :full_name, :gender, :provider, :uid)
