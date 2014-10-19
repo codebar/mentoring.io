@@ -6,7 +6,6 @@ feature 'Sign up' do
     click_on 'Sign up'
 
     fill_in "Email", with: 'test@email.com'
-    fill_in "Full name", with: 'Olive Sparkles'
   end
 end
 
