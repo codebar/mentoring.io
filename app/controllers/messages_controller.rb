@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_filter :logged_in?
+
   before_filter :set_classified, only: [:new, :create]
   before_filter :setup_message, only: [:create, :create_message ]
   before_filter :set_message, only: [:destroy, :show]
@@ -11,6 +13,7 @@ class MessagesController < ApplicationController
     @message.classified_id = params[:classified_id]
 
     if @message.save
+      MessageMailer.notify(@message.classified.member, @message).deliver
       redirect_to classified_messages_path(@classified) and return
     else
       flash[:notice] = @message.errors
@@ -22,6 +25,7 @@ class MessagesController < ApplicationController
     @message.message_id = params[:message_id]
 
     if @message.save
+      MessageMailer.notify(@message.message.member, @message).deliver
       redirect_to messages_path, notice: "Your message has been sent"
     else
       flash[:notice] = @message.errors

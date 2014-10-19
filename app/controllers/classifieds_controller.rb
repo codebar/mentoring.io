@@ -4,6 +4,7 @@ class ClassifiedsController < ApplicationController
   before_filter :set_classified, only: [:edit, :update]
 
   def index
+    @skills = Skill.all
     if search_params
       @classifieds = Classified.search(search_params).where(preview: false)
     else
@@ -58,6 +59,6 @@ class ClassifiedsController < ApplicationController
   end
 
   def search_params
-    params.require(:search).permit(:location, :remote, :face_to_face, skill_ids: [])
+    params.require(:search).permit(:location, :remote, :face_to_face, skill_ids: []) if params[:search]
   end
 end
