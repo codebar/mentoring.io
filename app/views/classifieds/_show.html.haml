@@ -21,12 +21,11 @@
       =link_to "#", title: 'Add to favorites', class: 'btn btn-info' do
         %i.fa.fa-star
         Favorite
-      =link_to "#", title: 'Send message', class: 'btn btn-info' do
       =link_to new_classified_message_path(classified), title: 'Send message', class: 'btn btn-default' do
         %i.fa.fa-envelope
         Message
     .text-right
       - if classified.preview
         %p=link_to 'Edit classified', edit_classified_path(classified), class: 'btn btn-default'
-      -else
+      - else
         %p= 'Posted'
