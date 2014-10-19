@@ -6,6 +6,8 @@
         .lead.tagline
           %p Learn to code with the help of a mentor
 
-          =link_to "Sign up", new_member_path, class: "btn btn-lg btn-default"
+        =link_to "Sign up", new_member_path, class: "btn btn-lg btn-default"
+        %br
+        %br
 
-          %p or become #{link_to("a mentor", new_member_path(mentor: true))}
+        %p or become #{link_to("a mentor", new_mentor_path)}

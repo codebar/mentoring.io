@@ -1,0 +1,8 @@
+%h1 Create your profile
+
+= simple_form_for @member, :url => member_create_profile_path, :method => :put do |f|
+  = f.input :about, placeholder: 'What do you do in your everyday life? Why do you want to learn/become a mentor?', :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'}, required: true
+  %p= 'How would you describe your current level of coding ability?'
+  = f.collection_radio_buttons :expertise, Member.expertise_levels, :first, :last
+  = f.input :location, placeholder: 'e.g. London', required: true
+  = f.submit
