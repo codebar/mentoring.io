@@ -1,14 +1,31 @@
-  html {
+body {
+  background-color: transparent;
+}
+.logo {
+  font-family: 'Patua One', cursive;
+  color: #FFFFFF;
+  background-color: #272F32;
+  margin: 0;
+  padding: 20px;
+}
+
+.background-image {
     background-image: url('background-image.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     background-position: center center;
-  }
+    padding-top: 52%;
+}
 
-  body {
-    background-color: transparent;
-  }
+#banner {
+  position: absolute;
+  width: 100%;
+  top: 79px;
+  background: #FF3D2E;
+  opacity: 0.96;
+  padding: 20px 0;
+}
+
 .landing {
   body {
     min-height: 100%;
@@ -17,20 +34,6 @@
   .container {
     width: 100%;
     padding: 0;
-  }
-
-  #banner {
-    background: #FF3D2E;
-    opacity: 0.96;
-    padding: 20px 0;
-  }
-
-  .logo {
-    font-family: 'Patua One', cursive;
-    color: #FFFFFF;
-    background-color: #272F32;
-    margin: 0;
-    padding: 20px;
   }
 
   p {
