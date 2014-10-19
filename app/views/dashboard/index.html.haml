@@ -12,7 +12,7 @@
 =link_to "View Mentors", mentors_path, class: "btn btn-default btn-lg btn-block"
 
 - unless current_member.verified?
-  = link_to "Verify Account via Text Message", dashboard_index_path, class: "btn btn-primary btn-lg btn-block"
+  = link_to "Verify Account via Text Message", verification_path, class: "btn btn-primary btn-lg btn-block"
   %p{:style => "text-align: center"}
     %b What is this?
     When you message someone on mentoring.io they will be able to see whether your account is listed as 'Verified' or 'Not Verified'

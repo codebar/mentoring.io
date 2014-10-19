@@ -1,34 +1,9 @@
-%br
 -if @classifieds.count > 0
+  %h1 Classifieds
+  %br
+
   - @classifieds.each do |classified|
-    .row
-      .col-md-12
-        %em #{time_ago_in_words(classified.created_at.to_time)} ago
-        %p= classified.description
-        - classified.skills.each do |skill|
-          %i{ class: skill.icon }
-          = skill.name
-        .text-right
-          - if classified.remote
-            %span.label.label-info
-              %i.fa.fa-laptop
-                Remote
-          - if classified.face_to_face
-            %span.label.label-info
-              %i.fa.fa-coffee
-                =classified.member.location
-          - if classified.preview
-            %p=link_to 'Edit classified', edit_classified_path(classified), class: 'btn btn-default'
-          -else
-            = 'Posted'
-      .col-md-12
-        .btn-group.btn-group-sm
-          =link_to "#", title: 'Add to favorites', class: 'btn btn-default' do
-            %i.fa.fa-star
-            Favorite
-          =link_to "#", title: 'Send message', class: 'btn btn-default' do
-            %i.fa.fa-envelope
-            Message
+    = render partial: 'classifieds/show', locals: { classified: classified }
 
     %hr
 -else
