@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     resources :skills, only: [:create, :new]
   end
 
-  resources :classifieds, only: [:create, :new]
+  resources :classifieds, only: [:index, :create, :new]
 end

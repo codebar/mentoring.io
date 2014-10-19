@@ -20,7 +20,6 @@ class Member < ActiveRecord::Base
   has_many :skills, through: :member_skills
   accepts_nested_attributes_for :member_skills, :allow_destroy => true
   has_many :classifieds
-  accepts_nested_attributes_for :classifieds, :allow_destroy => true
   # has_many :skills, :through => :member_skills
 
   def self.from_omniauth(auth, mentor=false)
