@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-
+  
   def new
     cookies[:mentor] = false
     redirect_to new_member_registration_path
