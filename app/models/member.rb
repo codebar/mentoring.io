@@ -54,5 +54,4 @@ class Member < ActiveRecord::Base
   def profile_complete?
     !self.about.blank? and !self.location.blank?
   end
-
 end
