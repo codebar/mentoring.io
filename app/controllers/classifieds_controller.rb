@@ -4,7 +4,11 @@ class ClassifiedsController < ApplicationController
   before_filter :set_classified, only: [:edit, :update]
 
   def index
-    @classifieds = Classified.where(preview: false)
+    if search_params
+      @classifieds = Classified.search(search_params).where(preview: false)
+    else
+      @classifieds = Classified.where(preview: false)
+    end
   end
 
   def new
@@ -38,6 +42,7 @@ class ClassifiedsController < ApplicationController
     redirect_to classified_preview_path(@classified.id), notice: "Your classified has been updated"
   end
 
+
   private
 
   def set_member
@@ -50,5 +55,9 @@ class ClassifiedsController < ApplicationController
 
   def classified_params
     params.require(:classified).permit(:description, :remote, :face_to_face, :preview, skill_ids: [])
+  end
+
+  def search_params
+    params.require(:search).permit(:location, :remote, :face_to_face, skill_ids: [])
   end
 end
