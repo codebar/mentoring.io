@@ -7,13 +7,13 @@ module Concerns::DeviseOverrides
 
   module InstanceMethods
     def after_sign_up_path_for(resource)
-      member_profile_form_path(resource)
+      new_member_profile_path
     end
 
     def after_sign_in_path_for(resource)
       unless resource.profile_complete?
         flash[:alert] = "Create your profile to complete your registration"
-        return member_profile_form_path(resource)
+        return new_member_profile_path
       end
 
       if resource.mentor
@@ -24,4 +24,3 @@ module Concerns::DeviseOverrides
     end
   end
 end
-
