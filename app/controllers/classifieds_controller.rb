@@ -1,9 +1,10 @@
 class ClassifiedsController < ApplicationController
 
   before_filter :set_member, only: [:new, :create, :preview, :edit, :update]
+  before_filter :set_classified, only: [:edit, :update]
 
   def index
-    @classifieds = Classified.all
+    @classifieds = Classified.where(preview: false)
   end
 
   def new
@@ -22,11 +23,9 @@ class ClassifiedsController < ApplicationController
   end
 
   def edit
-    @classified = @member.classifieds.find(params[:id])
   end
 
   def update
-    @classified = @member.classifieds.find(params[:id])
     @classified.update(classified_params)
 
     redirect_to classified_preview_path(@classified.id), notice: "Your classified has been updated"
@@ -36,6 +35,10 @@ class ClassifiedsController < ApplicationController
 
   def set_member
     @member = current_member
+  end
+
+  def set_classified
+    @classified = @member.classifieds.find(params[:id])
   end
 
   def classified_params
