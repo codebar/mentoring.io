@@ -11,9 +11,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    = render partial: 'layouts/messages'
     = render partial: 'layouts/navigation'
     .container
-      =render partial: 'layouts/messages'
       .row
         .col-md-12
           = yield
