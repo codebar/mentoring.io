@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
     if @member.valid?
       @member.save
       if @member.mentor
-        redirect_to new_member_member_skill_path(@member)
+        redirect_to new_member_skill_path
       else
         redirect_to new_member_classified_path(@member)
       end

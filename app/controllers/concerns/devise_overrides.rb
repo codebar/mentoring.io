@@ -17,7 +17,7 @@ module Concerns::DeviseOverrides
       end
 
       if resource.mentor
-        new_member_member_skill_path(resource)
+        new_member_skill_path
       else
         new_member_classified_path(resource)
       end

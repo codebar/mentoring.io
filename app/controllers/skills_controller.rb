@@ -1,11 +1,10 @@
-class MemberSkillsController < ApplicationController
+class SkillsController < ApplicationController
 
   before_filter :set_member, only: [:new, :create]
 
   def new
     @skills = Skill.all
 
-    render 'members/memberskills_form'
   end
 
   def create
@@ -15,14 +14,14 @@ class MemberSkillsController < ApplicationController
       #todo: redirect somewhere!
       redirect_to root_path
     else
-      render :'members/memberskills_form'
+      render 'skills/new'
     end
   end
 
   private
 
   def set_member
-    @member = Member.find(params[:member_id])
+    @member = current_member
   end
 
   def member_skills_params
