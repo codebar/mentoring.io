@@ -25,7 +25,7 @@ body {
 #banner {
   position: absolute;
   width: 100%;
-  top: 79px;
+  top: 0;
   background: #FF3D2E;
   opacity: 0.96;
   padding: 20px 0;
@@ -39,6 +39,7 @@ body {
   .container {
     width: 100%;
     padding: 0;
+    position: relative;
   }
 
   p {
