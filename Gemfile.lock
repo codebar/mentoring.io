@@ -176,6 +176,10 @@ GEM
     tilt (1.4.1)
     turbolinks (2.4.0)
       coffee-rails
+    twilio-ruby (3.13.1)
+      builder (>= 2.1.2)
+      jwt (~> 1.0.0)
+      multi_json (>= 1.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -208,4 +212,5 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks
+  twilio-ruby
   uglifier (>= 1.3.0)

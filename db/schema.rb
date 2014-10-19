@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019114042) do
+ActiveRecord::Schema.define(version: 20141019160312) do
 
   create_table "classified_skills", force: true do |t|
     t.integer  "classified_id"
@@ -90,5 +90,16 @@ ActiveRecord::Schema.define(version: 20141019114042) do
     t.string "name"
     t.string "icon"
   end
+
+  create_table "verifiers", force: true do |t|
+    t.integer  "member_id"
+    t.string   "mobile"
+    t.string   "code"
+    t.datetime "verified_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "verifiers", ["member_id"], name: "index_verifiers_on_member_id"
 
 end
