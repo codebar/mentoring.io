@@ -2,6 +2,7 @@ class MemberSkillsController < ApplicationController
 
   def new
     @member = Member.find(params[:member_id])
+    @skills = Skill.all
     render 'members/memberskills_form'
   end
 

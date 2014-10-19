@@ -2,6 +2,7 @@ class ClassifiedController < ApplicationController
 
   def new
     @member = Member.find(params[:member_id])
+    @skills = Skill.all
     @classified = @member.classifieds.build
     render :'members/classified_form'
   end
