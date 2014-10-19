@@ -7,6 +7,8 @@
 
     %p Interests
     = f.assocation :interests, as: :check_boxes
-
-    = input :name =>
-    = f.submit
+    
+    = simple_form_for @interests, :url => member_interests, :method => :post do |m|
+      = m.input :name, 
+      = m.submit 'Add new interest', class: 'btn btn-sm btn-default navbar-btn'
+    =f.submit 'Save', class: 'btn btn-sm btn-default navbar-btn'
