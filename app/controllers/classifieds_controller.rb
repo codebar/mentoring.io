@@ -31,7 +31,7 @@ class ClassifiedsController < ApplicationController
   end
 
   def preview
-    @classifieds = @member.classifieds.where(preview: :true)
+    @classifieds = @member.classifieds.where(preview: true)
   end
 
   def edit
