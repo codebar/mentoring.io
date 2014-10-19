@@ -1,0 +1,25 @@
+%h1 Message
+%br
+
+- if @message.classified
+  .panel.panel-default
+    .panel-body
+      =render partial: 'classifieds/show', locals: { classified: @message.classified }
+- elsif @message.message
+  .panel.panel-default
+    .panel-body
+      %strong= @message.message.created_at.to_formatted_s(:long_ordinal)
+      %p.lead
+        = @message.message.text
+
+
+.panel.panel-default
+  .panel-body
+    %strong= @message.created_at.to_formatted_s(:long_ordinal)
+    %p.lead
+      = @message.text
+
+
+= simple_form_for @response, url: :message_create_message  do |f|
+  = f.input :text, required: true, label: false, placeholder: "..."
+  = f.submit 'Send', class: 'btn btn-primary'
