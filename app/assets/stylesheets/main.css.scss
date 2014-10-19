@@ -68,16 +68,15 @@ body {
       border-color: #272F32;
     }
   }
-
   footer {
     color: #FFFFFF;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
   }
 }
 
 footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
   padding: 20px 0;
 }
 
