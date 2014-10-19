@@ -4,5 +4,5 @@
     = render partial: 'classifieds/show', locals: { classified: @classified }
 
 %br
-= link_to 'Edit classified', edit_classified_path(@classified), class: 'btn btn-default'
+
 = link_to 'Post classified', classified_confirm_path(@classified), method: :post, class: 'btn btn-primary'
