@@ -31,7 +31,7 @@ class ClassifiedsController < ApplicationController
   end
 
   def preview
-    @classified = @member.classifieds.find(params[:classified_id])
+    @classifieds = @member.classifieds.where(preview: true)
   end
 
   def edit
