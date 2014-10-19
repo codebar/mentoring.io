@@ -3,13 +3,12 @@ class InterestsController < ApplicationController
   before_filter :set_member, only: [:create]
 
   def create
-    puts "PARAMSSSSSSSSS #{params}"
     @interest = @member.added_interests.create(interest_params)
     # render 'skills/new'
     if @interest.valid?
       render :json => {:status => "OK", :name => @interest.name, :id => @interest.id}
     else
-      render :json => {:statis => "ERROR"}
+      render :json => {:status => "ERROR"}
     end
   end
 
