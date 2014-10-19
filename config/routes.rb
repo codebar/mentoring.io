@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :members, only: [:index, :new, :create]
   resources :dashboard, only: [:index]
-  resources :mentors, only: [:index]
+  resources :mentors, only: [:index, :show]
 
   resource :member, only: [] do
     resource :profile, only: [:new, :update]
