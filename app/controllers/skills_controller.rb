@@ -13,7 +13,7 @@ class SkillsController < ApplicationController
 
     if @member.valid?
       #todo: redirect somewhere!
-      redirect_to root_path
+      redirect_to dashboard_index_path
     else
       render 'skills/new'
     end

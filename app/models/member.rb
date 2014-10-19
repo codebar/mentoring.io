@@ -24,7 +24,9 @@ class Member < ActiveRecord::Base
   has_many :member_interests
   has_many :interests, through: :member_interests
   accepts_nested_attributes_for :member_interests, :allow_destroy => true
+
   has_many :added_interests, class_name: :Interest, foreign_key: "added_by"
+  has_one :verifier
 
   #SCOPES
 
@@ -45,6 +47,10 @@ class Member < ActiveRecord::Base
       member.save
     end
     member
+  end
+
+  def verified?
+    self.verifier and self.verifier.verified_at.present?
   end
 
   # VALIDATION

@@ -1,12 +1,10 @@
 %h1 Mentors
-
-
 .row
   -@mentors.each do |mentor|
     .col-md-4
-      %a{:href => mentor_path(mentor.id)}
-        .panel.panel-default
-          .panel-heading
+      .panel.panel-default
+        .panel-heading
+          %a{:href => mentor_path(mentor.id)}
             .row
               .col-sm-2
                 %img{:src => mentor.gravatar_image(50)}
@@ -14,7 +12,7 @@
                 %h3{:style => 'display:inline;'}= mentor.username
                 .smaller
                   = Member.expertise_levels[mentor.expertise]
-          .panel-body
-            %ul.skills
-              - mentor.skills.each do |skill|
-                %li{:class => "icon-#{skill.name.downcase}", :title => skill.name, :style => 'float: left'}
+        .panel-body
+          %ul.skills
+            - mentor.skills.each do |skill|
+              %li{:class => "icon-#{skill.name.downcase}", :title => skill.name, :style => 'float: left'}

@@ -65,6 +65,7 @@ bundle exec rake
 - [devise](https://github.com/plataformatec/devise)
 - [omniauth-github](https://github.com/intridea/omniauth-github)
 - [font-mfizz](https://github.com/mfizz-inc/font-mfizz)
+- [twilio-ruby](https://www.twilio.com)
 
 ### Testing
 - [rspec-rails](https://github.com/rspec/rspec-rails)

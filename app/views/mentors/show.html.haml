@@ -1,0 +1,12 @@
+%h1 Profile
+%h2= @member.full_name
+%h4 About:
+%p= @member.about
+%h4 Expertise:
+%p= Member.expertise_levels[@member.expertise]
+%h4 Location:
+%p= @member.location
+%h4 Skills:
+%ul.skills
+  - @member.skills.each do |skill|
+    %li{:class => "icon-#{skill.name.downcase}", :title => skill.name, :style => 'float: left'}
