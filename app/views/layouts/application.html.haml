@@ -11,8 +11,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body{:class => ("landing" unless current_member)}
-    %h1.logo mentoring.io
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          =link_to root_path, class: 'navbar-brand' do
+            .logo mentoring.io
     .container
+      =render partial: 'layouts/messages'
       = yield
 
     %footer
