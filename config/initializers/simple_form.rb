@@ -54,9 +54,9 @@ SimpleForm.setup do |config|
     b.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
   end
 
-  config.wrappers :inline_checkbox, :tag => 'div', :class => 'control-group', :error_class => 'error' do |b|
+  config.wrappers :inline_checkbox, :tag => 'div', :error_class => 'error' do |b|
     b.use :html5
-    b.use :label_input, :wrap_with => { tag: :label, :class => 'checkbox-inline' }
+    b.use :label_input
     b.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
     b.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
   end
@@ -127,7 +127,7 @@ SimpleForm.setup do |config|
   # in this configuration, which is recommended due to some quirks from different browsers.
   # To stop SimpleForm from generating the novalidate option, enabling the HTML5 validations,
   # change this configuration to true.
-  config.browser_validations = false
+  config.browser_validations = true
 
   # Collection of methods to detect if a file type was given.
   # config.file_methods = [ :mounted_as, :file?, :public_filename ]
@@ -157,5 +157,5 @@ SimpleForm.setup do |config|
   # config.cache_discovery = !Rails.env.development?
 
   # Default class for inputs
-  config.input_class = ""
+  config.input_class = "form-control"
 end

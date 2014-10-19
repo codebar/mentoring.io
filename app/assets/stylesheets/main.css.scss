@@ -88,3 +88,12 @@ footer {
 nav.navbar a {
   color: #9DBDC6;
 }
+
+label.checkbox {
+  display: inline-block;
+  padding: 0px 20px;
+
+  .form-control {
+    height: auto;
+}
+}

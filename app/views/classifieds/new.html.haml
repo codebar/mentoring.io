@@ -4,11 +4,11 @@
 .form
   = simple_form_for @classified, :method => :post, role: 'form'  do |f|
     .form-group
-      = f.input :description, :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'} , placeholder: "e.g. I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials"
+      = f.input :description, :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'} , placeholder: "e.g. I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials", required: true
     .form-group
-      %p Is there any Are you interested in any specific programming languages?
+      %p Check any skills that you are comfortable with
 
-      = f.association :skills, as: :check_boxes, wrapper: :inline_checkbox
+      = f.association :skills, as: :check_boxes, wrapper: :inline_checkbox, label: false
 
     .form-group
       %p How would you like to work?
