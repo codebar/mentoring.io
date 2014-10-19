@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_filter :logged_in?
+
   before_filter :set_classified, only: [:new, :create]
   before_filter :setup_message, only: [:create, :create_message ]
   before_filter :set_message, only: [:destroy, :show]
