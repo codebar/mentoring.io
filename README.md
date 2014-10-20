@@ -1,6 +1,5 @@
-[ ![Codeship Status for railsrumble/r14-team-256](https://www.codeship.io/projects/cc623f40-2f6e-0131-16cc-02924afac62f/status)](https://www.codeship.io/projects/9483)
-
 ## mentoring
+[![Build Status](https://travis-ci.org/codebar/mentoring.io.svg?branch=master)](https://travis-ci.org/codebar/mentoring.io)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/codebar/mentoring.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Connecting mentors and students.
