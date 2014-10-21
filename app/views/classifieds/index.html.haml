@@ -38,7 +38,7 @@
                     = skill.name
         .form-group{:style => 'float: right'}
           = submit_tag "Search", :class => 'btn btn-default btn-lg'
-- if @classifieds.count > 0
+- if @classifieds.any?
   - @classifieds.each do |classified|
     .panel.panel-default
       .panel-body
