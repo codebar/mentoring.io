@@ -2,7 +2,7 @@
   Dashboard
   - if current_member.verified?
     = link_to "#", title: 'Verified' do
-      %i.fa.fa-check.green
+      %i.fa.fa-check.green{'data-toggle' => "tooltip", 'data-placement' => 'right',  title: "Verified member"}
 
 - unless @member.mentor
   = link_to "My classifieds", personal_classified_path, class: "btn btn-default btn-lg btn-block"
