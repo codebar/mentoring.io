@@ -4,8 +4,8 @@
     -@mentors.each do |mentor|
       .col-md-4
         .panel.panel-default
-          .panel-heading
-            %a{:href => mentor_path(mentor.id)}
+          .panel-body
+            =link_to mentor_path(mentor.username) do
               .row
                 .col-sm-2
                   %img{:src => mentor.gravatar_image(50)}
@@ -13,10 +13,10 @@
                   %h3{:style => 'display:inline;'}= mentor.username
                   .smaller
                     = Member.expertise_levels[mentor.expertise]
-          .panel-body
+          .panel-footer
             %ul.skills
               - mentor.skills.each do |skill|
-                %li{:class => "icon-#{skill.name.downcase}", :title => skill.name, :style => 'float: left'}
+                %li{'data-toggle' => "tooltip", title: skill.name, class: "icon-#{skill.name.downcase}" }
 -else
   %p.blankstate
     %i.fa.fa-user.fa-2x

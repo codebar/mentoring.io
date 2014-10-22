@@ -1,21 +1,23 @@
-.panel.panel-default
-  .panel-body
-    %h1 My profile
+.row
+  .col-md-offset-2.col-md-8
+    .panel.panel-default
+      .panel-body
+        .row
+          .col-md-3
+            =image_tag(@member.gravatar_image(150))
+          .col-md-9
+            %h1
+              =@member.full_name
+              %br
+              %small= @member.location
+            %em= Member.expertise_levels[@member.expertise_levels]
+        .row
+          .col-md-12
+            %br
+            %p.lead= @member.about
+      .panel-footer
+        %ul.skills
+          - @member.skills.each do |skill|
+            %li.fa.fa-2x{'data-toggle' => "tooltip", title: skill.name, class: "icon-#{skill.name.downcase}" }
 
-    %p= @member.full_name
-    %p.lead= @member.about
-    %h4 Expertise level:
-    %p= Member.expertise_levels[@member.expertise]
-    %h4 Location:
-    %p= @member.location
-    -if @member.mentor
-      %h4 Interests:
-      = @member.interests.map(&:name).join(', ')
-      %h4 Skills:
-      %ul.skills
-        - @member.skills.each do |skill|
-          %li{:class => "icon-#{skill.name.downcase}", :title => skill.name }
-            = skill.name
-      %br
-
-    = link_to 'Edit profile', edit_member_profile_path, class: 'btn btn-lg btn-default'
+    = link_to 'Edit', edit_member_profile_path, class: 'btn btn-lg btn-primary'
