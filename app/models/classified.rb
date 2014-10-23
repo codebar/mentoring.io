@@ -5,7 +5,6 @@ class Classified < ActiveRecord::Base
   
   belongs_to :member
 
-  before_save :add_url_token
 
   def self.search(params)
     search_clause = []
@@ -27,7 +26,7 @@ class Classified < ActiveRecord::Base
   end
 
   private
-  
+
   def add_url_token
     begin
       self.url_token = SecureRandom.hex[3,7].upcase

@@ -3,6 +3,8 @@ class ClassifiedsController < ApplicationController
   before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm, :personal]
   before_filter :set_classified, only: [:edit, :update]
   before_filter :logged_in?
+  before_save :add_url_token, only: [:show]
+
   def index
     @skills = Skill.all
     if search_params
@@ -45,6 +47,10 @@ class ClassifiedsController < ApplicationController
     @classified.update(classified_params)
 
     redirect_to classified_preview_path(@classified.id), notice: "Your classified has been updated"
+  end
+
+  def show
+    
   end
 
 
