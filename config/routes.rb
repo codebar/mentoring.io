@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get :personal
   end
 
-  resources :classifieds, only: [:index, :create, :new, :update, :edit] do
+  resources :classifieds, only: [:index, :create, :new, :update, :edit, :show] do
     post :confirm, as: 'confirm'
     get :preview, as: 'preview'
     resources :messages
