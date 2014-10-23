@@ -3,7 +3,7 @@ class ClassifiedsController < ApplicationController
   before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm, :personal]
   before_filter :set_classified, only: [:edit, :update]
   before_filter :logged_in?
-  before_save :add_url_token, only: [:show]
+
 
   def index
     @skills = Skill.all

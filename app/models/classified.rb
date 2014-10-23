@@ -4,7 +4,7 @@ class Classified < ActiveRecord::Base
   has_many :messages
   
   belongs_to :member
-
+  before_save :add_url_token
 
   def self.search(params)
     search_clause = []
@@ -31,6 +31,5 @@ class Classified < ActiveRecord::Base
     begin
       self.url_token = SecureRandom.hex[3,7].upcase
     end while self.class.exists?(url_token: url_token)
-    end
   end
 end
