@@ -2,10 +2,10 @@ class Classified < ActiveRecord::Base
   has_many :classified_skills
   has_many :skills, through: :classified_skills
   has_many :messages
-
+  
   belongs_to :member
 
-
+  before_save :add_url_token
 
   def self.search(params)
     search_clause = []
@@ -24,5 +24,14 @@ class Classified < ActiveRecord::Base
     search_clause = search_clause.join(" and ").to_s
     puts "search_clause : #{search_clause}"
     Classified.select("classifieds.*").joins(:member).joins(:skills).where(search_clause).group("classifieds.id")
+  end
+
+  private
+  
+  def add_url_token
+    begin
+      self.url_token = SecureRandom.hex[3,7].upcase
+    end while self.class.exists?(url_token: url_token)
+    end
   end
 end
