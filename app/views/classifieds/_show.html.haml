@@ -24,7 +24,8 @@
       =link_to new_classified_message_path(classified), title: 'Send message', class: 'btn btn-default' do
         %i.fa.fa-envelope
         Message
-      %a.twitter-share-button{"data-hashtags" => "mentoring.io", "data-size" => "large", "data-text" => "Could you be my mentor? Checkout what I would like to learn here:", "data-url" => "https://mentoring.io", :href => "https://twitter.com/share"} Tweet
+      - url = classified.id.to_s
+      %a.twitter-share-button{"data-hashtags" => "mentoring.io", "data-size" => "large", "data-text" => "Could you be my mentor? Checkout what I would like to learn here:", "data-url" => "http://localhost:3000/classifieds/" + url, :href => "https://twitter.com/share"} Tweet
       :javascript
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
     .text-right
