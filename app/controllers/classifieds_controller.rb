@@ -3,7 +3,7 @@ class ClassifiedsController < ApplicationController
   before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm, :personal, :show]
   before_filter :set_classified, only: [:edit, :update]
   before_filter :set_classified_token, only: [:show]
-  before_filter :logged_in?
+  before_filter :logged_in?, except: [:show]
 
 
   def index
