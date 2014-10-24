@@ -29,7 +29,7 @@ class ClassifiedsController < ApplicationController
     @classified = @member.classifieds.find(params[:classified_id])
     @classified.update_attribute :preview, false
 
-    redirect_to dashboard_index_path, notice: "Your classified has been listed"
+    redirect_to personal_classified_path, notice: "Your classified has been listed"
   end
 
   def personal
