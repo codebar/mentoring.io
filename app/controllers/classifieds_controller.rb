@@ -1,7 +1,8 @@
 class ClassifiedsController < ApplicationController
 
   before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm, :personal, :show]
-  before_filter :set_classified, only: [:edit, :update, :show]
+  before_filter :set_classified, only: [:edit, :update]
+  before_filter :set_classified_token, only: [:show]
   before_filter :logged_in?
 
 
@@ -62,6 +63,10 @@ class ClassifiedsController < ApplicationController
 
   def set_classified
     @classified = @member.classifieds.find(params[:id])
+  end
+
+  def set_classified_token
+    @classified_token = Classified.find_by_url_token(params[:id])
   end
 
   def classified_params
