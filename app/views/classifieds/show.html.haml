@@ -22,4 +22,5 @@
           %span.label.label-info
             %i.fa.fa-coffee
               = "Face to face in " + @classified_token.member.location
-             
+      %p{:style => "float: right"}
+        =link_to "Sign Up as a Mentor", new_mentor_path, class: "btn btn-lg btn-primary"
