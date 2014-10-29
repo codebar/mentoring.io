@@ -5,8 +5,8 @@
       %i.fa.fa-check.green{'data-toggle' => "tooltip", 'data-placement' => 'right',  title: "Verified member"}
 
 - unless @member.mentor
-  = link_to "My classifieds", personal_classified_path, class: "btn btn-primary btn-lg btn-block"
-  = link_to "Create a classified", new_classified_path, class: "btn btn-default btn-lg btn-block"
+  = link_to "My Classified Adverts", personal_classified_path, class: "btn btn-default btn-lg btn-block"
+  = link_to "Add a New Classified Advert", new_classified_path, class: "btn btn-default btn-lg btn-block"
 =link_to "My Profile", member_profile_path, class: "btn btn-primary btn-lg btn-block"
 =link_to "Messages", messages_path, class: "btn btn-default btn-lg btn-block"
 =link_to "View all Classified Adverts", classifieds_path, class: "btn btn-primary btn-lg btn-block"

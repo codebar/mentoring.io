@@ -1,8 +1,11 @@
 class ClassifiedsController < ApplicationController
 
-  before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm, :personal]
+  before_filter :set_member, only: [:new, :create, :preview, :edit, :update, :confirm, :personal, :show]
   before_filter :set_classified, only: [:edit, :update]
-  before_filter :logged_in?
+  before_filter :set_classified_token, only: [:show]
+  before_filter :logged_in?, except: [:show]
+
+
   def index
     @skills = Skill.all
     if search_params
@@ -27,7 +30,7 @@ class ClassifiedsController < ApplicationController
     @classified = @member.classifieds.find(params[:classified_id])
     @classified.update_attribute :preview, false
 
-    redirect_to dashboard_index_path, notice: "Your classified has been listed"
+    redirect_to personal_classified_path, notice: "Your classified has been listed"
   end
 
   def personal
@@ -47,6 +50,10 @@ class ClassifiedsController < ApplicationController
     redirect_to classified_preview_path(@classified.id), notice: "Your classified has been updated"
   end
 
+  def show
+    
+  end
+
 
   private
 
@@ -56,6 +63,10 @@ class ClassifiedsController < ApplicationController
 
   def set_classified
     @classified = @member.classifieds.find(params[:id])
+  end
+
+  def set_classified_token
+    @classified_token = Classified.find_by_url_token(params[:id])
   end
 
   def classified_params
