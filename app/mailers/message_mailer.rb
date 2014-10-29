@@ -1,4 +1,5 @@
 class MessageMailer < ActionMailer::Base
+  default from: 'no-reply@mentoring.io'
 
   def notify(member, message)
     @message = message
