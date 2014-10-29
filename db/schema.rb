@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019205937) do
+ActiveRecord::Schema.define(version: 20141023161838) do
 
   create_table "classified_skills", force: true do |t|
     t.integer  "classified_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141019205937) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "preview"
+    t.string   "url_token"
   end
 
   create_table "interests", force: true do |t|
@@ -64,7 +65,6 @@ ActiveRecord::Schema.define(version: 20141019205937) do
     t.boolean  "mentor"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20141019205937) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "location"
     t.string   "provider"
     t.string   "uid"
   end

@@ -1,0 +1,26 @@
+.panel.panel-default
+  .panel-body
+    %h1 Could you mentor me?
+    .row
+    .col-md-12
+      %em #{time_ago_in_words(@classified_token.created_at.to_time)} ago
+      %br
+      %br
+      %p.lead= @classified_token.description
+      - @classified_token.skills.each do |skill|
+        %li{:class => "icon-#{skill.name.downcase}", :style => "display: inline", :title => skill.name }
+        = skill.name
+        .row
+      .col-md-12
+      - if @classified_token.remote
+        %p
+          %span.label.label-info
+            %i.fa.fa-laptop
+              Remote
+      - if @classified_token.face_to_face
+        %p
+          %span.label.label-info
+            %i.fa.fa-coffee
+              = "Face to face in " + @classified_token.member.location
+      %p{:style => "float: right"}
+        =link_to "Sign Up as a Mentor", new_mentor_path, class: "btn btn-lg btn-primary"
