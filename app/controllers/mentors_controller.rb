@@ -6,6 +6,6 @@ class MentorsController < ApplicationController
   end
 
   def show
-    @member = Member.find_by_username(params[:id])
+    @member = Member.find(params[:id])
   end
 end
