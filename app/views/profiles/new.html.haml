@@ -3,7 +3,7 @@
 = simple_form_for @member, :url => member_profile_path, :method => :put do |f|
   = f.input :full_name, placeholder: 'e.g. Jane Doe', required: false
   = f.input :username, required: true
-  = f.input :gender, hint: "This is for demographics and promoting diversity, you don't need to fill it in, but uif you did we would be grateful"
+  = f.input :gender, hint: "This is for demographics and promoting diversity, you don't need to fill it in, but if you did we would be grateful"
   = f.input :about, placeholder: 'What do you do in your everyday life? Why do you want to learn/become a mentor?', :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'}, required: true
   %p= 'How would you describe your current level of coding ability?'
   = f.collection_radio_buttons :expertise, Member.expertise_levels, :first, :last
