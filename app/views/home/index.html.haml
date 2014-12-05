@@ -6,7 +6,10 @@
         .lead.tagline
           %p An online community where mentors can share their skills and provide guidance to new developers.
 
-        =link_to "Sign up", new_member_path, class: "btn btn-lg btn-primary"
+        - if member_signed_in?
+          = link_to "My Dashboard", 'dashboard', class: "btn btn-lg btn-primary"
+        - else
+          =link_to "Sign up", new_member_path, class: "btn btn-lg btn-primary"
         %br
         %br
 
