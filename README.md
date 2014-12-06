@@ -6,19 +6,19 @@ Connecting mentors and students.
 
 ## Getting started
 
-Install Ruby 2.1.2
+Install Ruby 2.1.5
 
 ### Using [rvm](https://rvm.io/rvm/install)
 
 ```bash
-rvm install 2.1.2
+rvm install 2.1.5
 ```
 
 ### Using [rbenv](https://github.com/sstephenson/rbenv)
 
 ```bash
-rbenv install 2.1.2
-rbenv global 2.1.2
+rbenv install 2.1.5
+rbenv global 2.1.5
 ```
 
 ### Install the gems
