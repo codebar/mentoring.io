@@ -24,6 +24,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :production do
