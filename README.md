@@ -1,5 +1,6 @@
 ## mentoring
 [![Build Status](https://travis-ci.org/codebar/mentoring.io.svg?branch=master)](https://travis-ci.org/codebar/mentoring.io)
+[![Code Climate](https://codeclimate.com/github/codebar/mentoring.io/badges/gpa.svg)](https://codeclimate.com/github/codebar/mentoring.io)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/codebar/mentoring.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Connecting mentors and students.
