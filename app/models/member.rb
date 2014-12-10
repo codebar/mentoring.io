@@ -32,7 +32,10 @@ class Member < ActiveRecord::Base
   #SCOPES
 
   scope :mentors, -> {where(:mentor => true)}
-  scope :with_complete_profile, -> {where.not('about is null OR location is null')}
+  scope :with_complete_profile, -> {where(complete: true)}
+
+  #CALLBACKS
+  before_save :set_complete
 
   def self.from_omniauth(auth, mentor=false)
     if member = Member.find_by_email(auth.info.email)
@@ -52,7 +55,7 @@ class Member < ActiveRecord::Base
   end
 
   def verified?
-    self.verifier and self.verifier.verified_at.present?
+    verifier && verifier.verified_at.present?
   end
 
   # VALIDATION
@@ -61,7 +64,7 @@ class Member < ActiveRecord::Base
   end
 
   def profile_complete?
-    !self.about.blank? and !self.location.blank?
+    username.present? && about.present? && location.present?
   end
 
   def gravatar_image(size = 100)
@@ -71,5 +74,12 @@ class Member < ActiveRecord::Base
 
   def classified_messages
     classifieds.map(&:messages).flatten
+  end
+
+  private
+
+  def set_complete
+    self.complete = profile_complete?
+    return
   end
 end
