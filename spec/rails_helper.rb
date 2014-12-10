@@ -20,6 +20,9 @@ require 'rspec/rails'
 #
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 require "codeclimate-test-reporter"
+require 'capybara/rspec'
+require 'capybara/poltergeist'
+require 'capybara-screenshot/rspec'
 CodeClimate::TestReporter.start
 
 # Checks for pending migrations before tests are run.
@@ -49,4 +52,6 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  config.include SessionHelpers
 end
