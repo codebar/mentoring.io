@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.2)
@@ -38,6 +39,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.3)
+      capybara (>= 1.0, < 3)
+      colored
+      launchy
+    cliver (0.3.2)
     codeclimate-test-reporter (0.4.3)
       simplecov (>= 0.7.1, < 1.0.0)
     coffee-rails (4.0.1)
@@ -47,6 +53,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    colored (1.2)
     database_cleaner (1.3.0)
     devise (3.4.0)
       bcrypt (~> 3.0)
@@ -83,6 +90,8 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     jwt (1.0.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.2)
@@ -112,6 +121,11 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.17.1)
+    poltergeist (1.5.1)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -195,6 +209,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket-driver (0.4.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -204,6 +219,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   capybara
+  capybara-screenshot
   codeclimate-test-reporter
   database_cleaner
   devise
@@ -213,6 +229,7 @@ DEPENDENCIES
   jquery-rails
   omniauth-github (= 1.1.1)
   pg
+  poltergeist
   rails (= 4.1.6)
   rails_12factor
   rspec-rails

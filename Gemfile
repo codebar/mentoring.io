@@ -27,6 +27,8 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'poltergeist'
   gem 'codeclimate-test-reporter', require: nil
 end
 
