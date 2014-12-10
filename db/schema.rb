@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023161838) do
+ActiveRecord::Schema.define(version: 20141210020512) do
 
   create_table "classified_skills", force: true do |t|
     t.integer  "classified_id"
@@ -58,18 +58,18 @@ ActiveRecord::Schema.define(version: 20141023161838) do
   create_table "members", force: true do |t|
     t.string   "full_name"
     t.string   "username"
-    t.string   "email",                  default: "", null: false
+    t.string   "email",                  default: "",    null: false
     t.string   "gender"
     t.text     "about"
     t.integer  "expertise"
     t.boolean  "mentor"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20141023161838) do
     t.string   "location"
     t.string   "provider"
     t.string   "uid"
+    t.boolean  "complete",               default: false, null: false
   end
 
   add_index "members", ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
