@@ -1,8 +1,14 @@
 require 'rails_helper'
 
 describe Member do
-  let(:incomplete_profile) { build(:member)          }
-  let(:complete_profile)   { build(:complete_member) }
+  let!(:incomplete_profile) { create(:member)          }
+  let!(:complete_profile)   { create(:complete_member) }
+
+  describe '.with_complete_profile' do
+    it 'returns only members with complete profiles' do
+      expect(Member.with_complete_profile).to match_array [complete_profile]
+    end
+  end
 
   describe '#profile_complete?' do
     context 'without about or location' do

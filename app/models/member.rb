@@ -32,6 +32,7 @@ class Member < ActiveRecord::Base
   #SCOPES
 
   scope :mentors, -> {where(:mentor => true)}
+  scope :with_complete_profile, -> {where.not('about is null OR location is null')}
 
   def self.from_omniauth(auth, mentor=false)
     if member = Member.find_by_email(auth.info.email)
