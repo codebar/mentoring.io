@@ -74,7 +74,7 @@ bundle exec rake
 - [capybara](https://github.com/jnicklas/capybara)
 
 # Team
-- Despo Pentara
-- Rosa Fox
-- Kriszta Matyi
-- Dorothy Wingrove
+- [Despo Pentara](http://github.com/despo)
+- [Rosa Fox](http://github.com/Rosa-Fox)
+- [Kriszta Matyi](http://github.com/matyikriszta)
+- [Dorothy Wingrove](http://github.com/dorothyjane)
