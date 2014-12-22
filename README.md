@@ -33,6 +33,7 @@ bundle install --without production
 
 ```bash
 bundle exec rake db:create
+bundle exec rake db:migrate
 ```
 
 ### Enable Github authentication
