@@ -1,12 +1,17 @@
 en:
+  devise:
+    signup: Sign up
+    signout: Sign out
+    signin: Sign in
   layouts:
     footer:
       made: made with
       by: by
+    navigation:
+      mentoringio: mentoring.io
   home:
     index:
       tagline: An online community where mentors can share their skills and provide guidance to new developers.
       myadshboard: My Dashboard
-      signup: Sign up
       become: or become
       mentor: a mentor
