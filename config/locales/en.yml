@@ -1,4 +1,8 @@
 en:
+  layouts:
+    footer:
+      made: made with
+      by: by
   home:
     index:
       tagline: An online community where mentors can share their skills and provide guidance to new developers.
