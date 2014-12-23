@@ -1,11 +1,15 @@
 en:
   devise:
     signup: Sign up
+    signup_with: Sign up with...
+    or_with: or with your email address
     signout: Sign out
     signin: Sign in
     login: Log in
     email: Email
     password: Password
+    password_confirmation: Password confirmation
+    hint: "%{characters} characters minimum"
     rememberme: Remember me
   layouts:
     footer:
