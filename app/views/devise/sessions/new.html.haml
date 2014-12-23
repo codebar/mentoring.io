@@ -1,7 +1,7 @@
 .row
-  %h1 Sign in
+  %h1= t('devise.signin')
   .col-md-6
-    - resource_class.omniauth_providers.each do |provider| 
+    - resource_class.omniauth_providers.each do |provider|
       = link_to  omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary btn-lg' do
         %i.fa.fa-github.fa-5x
         %br
@@ -9,10 +9,9 @@
   .col-md-6
     = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-inputs
-        = f.input :email, autofocus: true, required: true
-        = f.input :password, required: true
-        = f.input :remember_me, as: :boolean, wrapper: :inline_checkbox if devise_mapping.rememberable?
+        = f.input :email, autofocus: true, required: true, label: t('devise.email')
+        = f.input :password, required: true, label: t('devise.password')
+        = f.input :remember_me, as: :boolean, label: t('devise.rememberme'), wrapper: :inline_checkbox if devise_mapping.rememberable?
 
       .form-actions
-        = f.button :submit, "Log in", class: "btn btn-default"
-
+        = f.button :submit, t('devise.login'), class: "btn btn-default"

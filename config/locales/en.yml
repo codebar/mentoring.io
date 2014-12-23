@@ -3,6 +3,10 @@ en:
     signup: Sign up
     signout: Sign out
     signin: Sign in
+    login: Log in
+    email: Email
+    password: Password
+    rememberme: Remember me
   layouts:
     footer:
       made: made with
