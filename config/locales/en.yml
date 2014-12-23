@@ -13,6 +13,7 @@ en:
     rememberme: Remember me
   profiles:
     create: Create your profile
+    edit: Edit your profile
     describe: How would you describe your current level of coding ability?
     name: Full name
     name_placeholder: e.g. Jane Doe

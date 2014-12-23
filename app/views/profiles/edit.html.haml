@@ -1,8 +1,11 @@
-%h1 Edit your profile
+%h1= t('profiles.edit')
 
 = simple_form_for @member, :url => member_profile_path, :method => :put do |f|
-  = f.input :about, placeholder: 'What do you do in your everyday life? Why do you want to learn/become a mentor?', :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'}, required: true
-  %p= 'How would you describe your current level of coding ability?'
+  = f.input :full_name, placeholder: t('profiles.name_placeholder'), required: false, label: t('profiles.name')
+  = f.input :username, required: true, label: t('profiles.user')
+  = f.input :gender, label: t('profiles.gender'), hint: t('profiles.gender_hint')
+  = f.input :about, label: t('profiles.about'), placeholder: t('profiles.about_placeholder'), :as => :text, :input_html => { :rows => 7 , :style => 'width: 100%'}, required: true
+  %p= t('profiles.describe')
   = f.select :expertise, Member.expertise_levels.map { |k,v|[v,k] }, {}, { :class => 'form-control' }
-  = f.input :location, placeholder: 'e.g. London', required: true
-  = f.submit 'Next', class: 'btn btn-default'
+  = f.input :location, label: t('profiles.location'), placeholder: t('profiles.location_placeholder'), required: true
+  = f.submit t('profiles.save'), class: 'btn btn-primary'
