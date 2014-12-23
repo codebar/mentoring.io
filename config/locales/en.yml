@@ -25,6 +25,17 @@ en:
     about: About
     about_placeholder: What do you do in your everyday life? Why do you want to learn/become a mentor?
     save: Save
+  classifieds:
+    new: New classified
+    description: What do you want to achieve?
+    description_placeholder: e.g. I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials
+    skills: Skills that you are looking to improve
+    skills_hint: (we recommend you don't pick more than 3)
+    meeting: Meeting preferences
+    meeting_hint: (select at least one)
+    submit: Preview classified
+    remote: Remote
+    face_to_face: Face to face
   layouts:
     footer:
       made: made with
