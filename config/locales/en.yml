@@ -11,6 +11,19 @@ en:
     password_confirmation: Password confirmation
     hint: "%{characters} characters minimum"
     rememberme: Remember me
+  profiles:
+    create: Create your profile
+    describe: How would you describe your current level of coding ability?
+    name: Full name
+    name_placeholder: e.g. Jane Doe
+    user: Username
+    gender: Gender
+    gender_hint: This is for demographics and promoting diversity, you don't need to fill it in, but if you did we would be grateful
+    location: Location
+    location_placeholder: e.g. London
+    about: About
+    about_placeholder: What do you do in your everyday life? Why do you want to learn/become a mentor?
+    save: Save
   layouts:
     footer:
       made: made with
