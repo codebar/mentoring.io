@@ -3,9 +3,10 @@
 %nav.navbar.navbar-default{ role: 'navigation' }
   .container-fluid
     .navbar-header
-      =link_to root_path, class: 'navbar-brand' do
+      =link_to member_signed_in? ? dashboard_index_path : root_path, class: 'navbar-brand' do
         .logo
           =t('.mentoringio')
+
     .collapse.navbar-collapse
       .navbar-text.navbar-right
         - if member_signed_in?
