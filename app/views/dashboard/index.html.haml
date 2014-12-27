@@ -1,19 +1,19 @@
 %h1
-  Dashboard
+  = t('dashboard.dashboard')
   - if current_member.verified?
-    = link_to "#", title: 'Verified' do
-      %i.fa.fa-check.green{'data-toggle' => "tooltip", 'data-placement' => 'right',  title: "Verified member"}
+    = link_to "#", title: t('dashboard.verified') do
+      %i.fa.fa-check.green{'data-toggle' => "tooltip", 'data-placement' => 'right',  title: t('dashboard.verified_member')}
 
 - unless @member.mentor
-  = link_to "My Classified Adverts", personal_classified_path, class: "btn btn-default btn-lg btn-block"
-  = link_to "Add a New Classified Advert", new_classified_path, class: "btn btn-default btn-lg btn-block"
-=link_to "My Profile", member_profile_path, class: "btn btn-primary btn-lg btn-block"
-=link_to "Messages", messages_path, class: "btn btn-default btn-lg btn-block"
-=link_to "View all Classified Adverts", classifieds_path, class: "btn btn-primary btn-lg btn-block"
-=link_to "View Mentors", mentors_path, class: "btn btn-default btn-lg btn-block"
+  = link_to t('dashboard.classified_adverts'), personal_classified_path, class: "btn btn-default btn-lg btn-block"
+  = link_to t('dashboard.new_classified_adverts'), new_classified_path, class: "btn btn-default btn-lg btn-block"
+=link_to t('dashboard.my_profile'), member_profile_path, class: "btn btn-primary btn-lg btn-block"
+=link_to t('dashboard.messages'), messages_path, class: "btn btn-default btn-lg btn-block"
+=link_to t('dashboard.all_classified_adverts'), classifieds_path, class: "btn btn-primary btn-lg btn-block"
+=link_to t('dashboard.view_mentors'), mentors_path, class: "btn btn-default btn-lg btn-block"
 
 - unless current_member.verified?
-  = link_to "Verify Account via Text Message", verification_path, class: "btn btn-primary btn-lg btn-block"
+  = link_to t('dashboard.verify_account_sms'), verification_path, class: "btn btn-primary btn-lg btn-block"
   %p{:style => "text-align: center"}
-    %b What is this?
-    When you message someone on mentoring.io they will be able to see whether your account is listed as 'Verified' or 'Not Verified'
+    %b= t('dashboard.what_is_this')
+    = t('dashboard.when_you_message_someone')

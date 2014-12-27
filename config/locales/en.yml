@@ -25,6 +25,19 @@ en:
     about: About
     about_placeholder: What do you do in your everyday life? Why do you want to learn/become a mentor?
     save: Save
+  dashboard:
+    dashboard: Dashboard
+    verified: Verified
+    verified_member: Verified member
+    my_classified_adverts: My Classified Adverts
+    new_classified_adverts: Add a New Classified Advert
+    my_profile: My Profile
+    messages: Messages
+    all_classified_adverts: View all Classified Adverts
+    view_mentors: View Mentors
+    verify_account_sms: Verify Account via Text Message
+    what_is_this: What is this?
+    when_you_message_someone: When you message someone on mentoring.io they will be able to see whether your account is listed as 'Verified' or 'Not Verified'
   classifieds:
     new: New classified
     description: What do you want to achieve?
