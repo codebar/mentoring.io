@@ -1,4 +1,4 @@
-%h1 My Classified Adverts
+%h1= t('classifieds.my_classified_adverts')
 - if @classifieds.count > 0
   - @classifieds.each do |classified|
     .panel.panel-default
@@ -7,5 +7,5 @@
 - else
   %p.blankstate
     %i.fa.fa-newspaper-o
-      You don't currently have a classified ads to preview!
+      = t('classifieds.dont_have_ads')
     %br

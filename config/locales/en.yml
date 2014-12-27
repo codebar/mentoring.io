@@ -49,6 +49,8 @@ en:
     submit: Preview classified
     remote: Remote
     face_to_face: Face to face
+    my_classified_adverts: My Classified Adverts
+    dont_have_ads: You don't currently have a classified ads to preview!
   layouts:
     footer:
       made: made with
