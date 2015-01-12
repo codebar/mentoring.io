@@ -7,7 +7,7 @@
           %p= t('.tagline')
 
         - if member_signed_in?
-          =link_to t('.mydashboard'), 'dashboard', class: "btn btn-lg btn-primary"
+          =link_to t('.mydshboard'), 'dashboard', class: "btn btn-lg btn-primary"
         - else
           =link_to t('devise.signup'), new_member_path, class: "btn btn-lg btn-primary"
           %br
