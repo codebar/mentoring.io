@@ -51,6 +51,9 @@ en:
     face_to_face: Face to face
     my_classified_adverts: My Classified Adverts
     dont_have_ads: You don't currently have a classified ads to preview!
+  messages:
+    message: Message
+    send: Send
   layouts:
     footer:
       made: made with
