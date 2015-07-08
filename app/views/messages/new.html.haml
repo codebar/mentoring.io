@@ -1,4 +1,4 @@
-%h1 Message
+%h1= t('messages.message') 
 %br
 .panel.panel-default
   .panel-body
@@ -7,4 +7,4 @@
 
 = simple_form_for [@classified, @message]  do |f|
   = f.input :text, required: true, label: false, placeholder: "..."
-  = f.submit 'Send', class: 'btn btn-primary'
+  = f.submit t('messages.send'), class: 'btn btn-primary'

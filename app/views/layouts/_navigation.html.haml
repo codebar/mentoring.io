@@ -4,10 +4,12 @@
   .container-fluid
     .navbar-header
       =link_to member_signed_in? ? dashboard_index_path : root_path, class: 'navbar-brand' do
-        .logo mentoring.io
+        .logo
+          =t('.mentoringio')
+
     .collapse.navbar-collapse
       .navbar-text.navbar-right
         - if member_signed_in?
-          = link_to 'Sign out', destroy_member_session_path, method: :delete, class: 'no-member'
+          = link_to t('devise.signout'), destroy_member_session_path, method: :delete, class: 'no-member'
         - else
-          = link_to 'Sign in', member_session_path, class: 'no-member'
+          = link_to t('devise.signin'), member_session_path, class: 'no-member'

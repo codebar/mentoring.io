@@ -1,22 +1,22 @@
-%h1 New classified
+%h1= t('classifieds.new')
 
 .form
   = simple_form_for @classified, :method => :post, role: 'form'  do |f|
     .form-group
-      = f.input :description, :as => :text, :input_html => { :rows => 4 , :style => 'width: 100%'} , placeholder: "e.g. I've been learning to code for the last couple of months. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials", required: true, label: 'What do you want to achieve?'
+      = f.input :description, label: t('classifieds.description'), :as => :text, :input_html => { :rows => 4 , :style => 'width: 100%'} , placeholder: t('classifieds.description_placeholder'), required: true
     .form-group
-      %b Skills that you are looking to improve
-      %em.hint (we recommend you don't pick more than 3)
+      %b= t('classifieds.skills')
+      %em.hint= t('classifieds.skills_hint')
 
       = f.association :skills, as: :check_boxes, wrapper: :inline_checkbox, label: false
 
     .form-group
-      %b Meeting preferences*
-      %em.hint (select at least one)
+      %b= t('classifieds.meeting')
+      %em.hint= t('classifieds.meeting_hint')
 
-      = f.input :remote, as: :boolean, wrapper: :inline_checkbox
-      = f.input :face_to_face, as: :boolean, wrapper: :inline_checkbox
+      = f.input :remote, label: t('classifieds.remote'), as: :boolean, wrapper: :inline_checkbox
+      = f.input :face_to_face, label: t('classifieds.face_to_face'), as: :boolean, wrapper: :inline_checkbox
 
       = f.input :preview, as: :hidden, :input_html => { :value => true }
 
-    = f.submit 'Preview classified', class: 'btn btn-primary'
+    = f.submit t('classifieds.submit'), class: 'btn btn-primary'

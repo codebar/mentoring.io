@@ -3,7 +3,7 @@
   .col-md-8.col-md-offset-2
     .row
       .col-md-12
-        %h3 Sign up with...
+        %h3= t('devise.signup_with')
         %br
         - resource_class.omniauth_providers.each do |provider|
           = link_to omniauth_authorize_path(resource_name, provider), class: 'btn btn-primary btn-lg' do
@@ -13,17 +13,17 @@
 
           %br
           %br
-          %h3 or with your email address
+          %h3= t('devise.or_with')
           %br
 
         = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form' }) do |f|
           = f.error_notification
 
-          = f.input :email, required: true, autofocus: true
-          = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
-          = f.input :password_confirmation, required: true
+          = f.input :email, required: true, autofocus: true, label: t('devise.email')
+          = f.input :password, required: true, label: t('devise.password'), hint: (t'devise.hint', characters: @minimum_password_length if @validatable)
+          = f.input :password_confirmation, required: true, label: t('devise.password_confirmation')
 
-          = f.button :submit, "Sign up", class: "btn-primary"
+          = f.button :submit, t('devise.signup'), class: "btn-primary"
 
 
     = render "devise/shared/links"

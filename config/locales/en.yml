@@ -1,23 +1,68 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  devise:
+    signup: Sign up
+    signup_with: Sign up with...
+    or_with: or with your email address
+    signout: Sign out
+    signin: Sign in
+    login: Log in
+    email: Email
+    password: Password
+    password_confirmation: Password confirmation
+    hint: "%{characters} characters minimum"
+    rememberme: Remember me
+  profiles:
+    create: Create your profile
+    edit: Edit your profile
+    describe: How would you describe your current level of coding ability?
+    name: Full name
+    name_placeholder: e.g. Jane Doe
+    user: Username
+    gender: Gender
+    gender_hint: This is for demographics and promoting diversity, you don't need to fill it in, but if you did we would be grateful
+    location: Location
+    location_placeholder: e.g. London
+    about: About
+    about_placeholder: What do you do in your everyday life? Why do you want to learn/become a mentor?
+    save: Save
+  dashboard:
+    dashboard: Dashboard
+    verified: Verified
+    verified_member: Verified member
+    my_classified_adverts: My Classified Adverts
+    new_classified_adverts: Add a New Classified Advert
+    my_profile: My Profile
+    messages: Messages
+    all_classified_adverts: View all Classified Adverts
+    view_mentors: View Mentors
+    verify_account_sms: Verify Account via Text Message
+    what_is_this: What is this?
+    when_you_message_someone: When you message someone on mentoring.io they will be able to see whether your account is listed as 'Verified' or 'Not Verified'
+  classifieds:
+    new: New classified
+    description: What do you want to achieve?
+    description_placeholder: e.g. I've been learning to code for the last couple of month. I am comfortable with HTML and CSS and know some Javascript. I'm working through the codebar.io tutorials
+    skills: Skills that you are looking to improve
+    skills_hint: (we recommend you don't pick more than 3)
+    meeting: Meeting preferences
+    meeting_hint: (select at least one)
+    submit: Preview classified
+    remote: Remote
+    face_to_face: Face to face
+    my_classified_adverts: My Classified Adverts
+    dont_have_ads: You don't currently have a classified ads to preview!
+  messages:
+    message: Message
+    send: Send
+  layouts:
+    footer:
+      made: made with
+      by: by
+    navigation:
+      mentoringio: mentoring.io
+  home:
+    index:
+      tagline: An online community where mentors can share their skills and provide guidance to new developers.
+      mydshboard: My Dashboard
+      become: or become
+      mentor: a mentor
